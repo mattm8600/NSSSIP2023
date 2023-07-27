@@ -1,0 +1,46 @@
+<launch>
+
+<arg name="savedata" default="false"/>
+<arg name="launch_placement" default="true"/>
+<arg name="launch_camera" default="true"/>
+<arg name="bag_prefix" default="20211012_noflying_orientation_test"/>
+<arg name="veh_name" default="VOXL1"/>
+
+ 	!-- Save Data -->
+        <group if="$(arg savedata)">
+        	<arg name="bagfile" default="$(arg bag_prefix)_$(arg veh_name)"/>
+        	<arg name="bagpath" default="/home/arl"/>
+        	<node pkg="rosbag" type="record" name="record" output="screen"
+        	args="-O $(arg bagpath)/$(arg bagfile) -b 0
+		/tflite_data
+		/bb_camera_vector
+		/mavros/local_position/velocity_body
+		/mavros/setpoint_raw/local
+		/yolov5/detections
+		/yolov5/image_out
+		/hires
+	     	">
+		</node>
+	</group>
+ 
+ 	<arg name="weights" default="/home/arl/yolov5/Weights/sensor_detectv1.pt"/>
+	<arg name="data" default="$(find yolov5_ros)/src/yolov5/data/sensor_detect.yaml"/>
+	<arg name="input_topic" default="/hires"/>
+
+	<include file="$(find yolov5_ros)/launch/yolov5.launch">
+    		<arg name="weights" value="$(arg weights)" />
+    		<arg name="data" value="$(arg data)" />
+    		<arg name="input_image_topic" value="$(arg input_topic)" />
+    		<arg name="confidence_threshold" default=".5" /> <!-- Edit this for detection ratio-->
+
+	</include>
+
+        <!-- Computer Packages -->
+        
+        <node if="$(arg launch_placement)" pkg="computer_pkg" type="placement.py" name="placement_node" output="screen">
+        </node>
+        
+        <node if="$(arg launch_camera)" pkg="computer_pkg" type="camera_convert_node" name="camera_convert_node" output="screen">
+    	</node>
+
+</launch>
