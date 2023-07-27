@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/arl/autonomy_ws/devel/include/drone_pkg/DroneOp.h"
-  "/home/arl/autonomy_ws/devel/include/drone_pkg/PlaceSensor.h"
+  "/home/arl/NSSSIP2023/autonomy_ws/devel/include/drone_pkg/DroneOp.h"
+  "/home/arl/NSSSIP2023/autonomy_ws/devel/include/drone_pkg/PlaceSensor.h"
   "CMakeFiles/drone_pkg_generate_messages_cpp"
 )
 

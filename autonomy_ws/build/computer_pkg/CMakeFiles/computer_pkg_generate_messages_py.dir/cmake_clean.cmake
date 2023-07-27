@@ -1,6 +1,10 @@
 file(REMOVE_RECURSE
-  "/home/arl/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/srv/_PlaceSensor.py"
-  "/home/arl/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/srv/__init__.py"
+  "/home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/msg/_AiDetection.py"
+  "/home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/msg/_BoundingBox.py"
+  "/home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/msg/_BoundingBoxes.py"
+  "/home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/msg/__init__.py"
+  "/home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/srv/_PlaceSensor.py"
+  "/home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/srv/__init__.py"
   "CMakeFiles/computer_pkg_generate_messages_py"
 )
 

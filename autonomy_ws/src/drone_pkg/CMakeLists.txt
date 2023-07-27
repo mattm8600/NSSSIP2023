@@ -15,6 +15,13 @@ find_package(catkin REQUIRED COMPONENTS
   message_generation
 )
 
+find_package(
+  cmake_modules REQUIRED
+  Eigen 3.1.2 Required
+)
+
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+
 ## Generate messages in the 'msg' folder
 # add_message_files(
 #   FILES
@@ -43,14 +50,44 @@ catkin_install_python(PROGRAMS src/servo_control.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
+find_library (GeographicLib_LIBRARIES Geographic
+  PATHS "${CMAKE_INSTALL_PREFIX}/../GeographicLib/lib")
+
+if (GeographicLib_LIBRARIES)
+  get_filename_component (GeographicLib_LIBRARY_DIRS
+    "${GeographicLib_LIBRARIES}" PATH)
+
+  get_filename_component (_ROOT_DIR "${GeographicLib_LIBRARY_DIRS}" PATH)
+  set (GeographicLib_INCLUDE_DIRS "${_ROOT_DIR}/../include")
+  set (GeographicLib_BINARY_DIRS "${_ROOT_DIR}/../bin")
+
+  # Required for Debian-alike systems
+  find_library (GeographicLib_LIBRARIES_DEBIAN libGeographic.so
+    PATHS "/usr/lib/x86_64-linux-gnu")
+  if (GeographicLib_LIBRARIES_DEBIAN)
+    set (GeographicLib_LIBRARIES ${GeographicLib_LIBRARIES_DEBIAN})
+    get_filename_component (GeographicLib_LIBRARY_DIRS
+      "${GeographicLib_LIBRARIES}" PATH)
+  endif ()
+endif ()
+
 ## Declare a catkin package
-catkin_package(CATKIN_DEPENDS message_runtime)
+catkin_package(
+DEPENDS Eigen roscpp  
+CATKIN_DEPENDS 
+  message_runtime
+  roscpp
+  sensor_msgs
+  std_msgs
+  geometry_msgs
+)
 
 include_directories(include
   ${catkin_INCLUDE_DIRS}
+  ${Eigen_INCLUDE_DIRS}
 )
 
 ## Add executables, libraries, and dependencies
 add_executable(drone_offboard src/drone_offboard.cpp)
+add_executable(PID_controller src/PID_controller.cpp)
 target_link_libraries(drone_offboard ${catkin_LIBRARIES})
-# add_dependencies(drone_offboard autonomy_pkg_generate_messages_cpp)

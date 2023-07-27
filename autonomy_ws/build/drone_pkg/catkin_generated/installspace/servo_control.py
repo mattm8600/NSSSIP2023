@@ -12,7 +12,6 @@ SERIAL_NUMBER = "4353800"
 
 def getTeensyPort():
     for port in list(list_ports.comports()):
-        #print(port[2])
         if VENDOR_ID in port[2] and PRODUCT_ID in port[2] and SERIAL_NUMBER in port[2]:
             return port[0]
         
@@ -38,9 +37,6 @@ if __name__ == '__main__':
         print("Can't find teensy")
 
     listen()
-    
-
-    #listen()
 
 
 

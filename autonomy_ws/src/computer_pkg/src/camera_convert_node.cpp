@@ -1,7 +1,7 @@
 #include <ros/ros.h>
 #include <mavros_msgs/PositionTarget.h>
 #include <geometry_msgs/PoseStamped.h>
-#include <offboard_testing/AiDetection.h>
+#include <computer_pkg/AiDetection.h>
 #include <std_msgs/String.h>
 #include <iostream>
 #include <Eigen/Dense>

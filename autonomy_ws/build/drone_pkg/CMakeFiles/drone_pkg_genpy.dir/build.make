@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/arl/autonomy_ws/src
+CMAKE_SOURCE_DIR = /home/arl/NSSSIP2023/autonomy_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/arl/autonomy_ws/build
+CMAKE_BINARY_DIR = /home/arl/NSSSIP2023/autonomy_ws/build
 
 # Utility rule file for drone_pkg_genpy.
 
@@ -63,10 +63,10 @@ drone_pkg/CMakeFiles/drone_pkg_genpy.dir/build: drone_pkg_genpy
 .PHONY : drone_pkg/CMakeFiles/drone_pkg_genpy.dir/build
 
 drone_pkg/CMakeFiles/drone_pkg_genpy.dir/clean:
-	cd /home/arl/autonomy_ws/build/drone_pkg && $(CMAKE_COMMAND) -P CMakeFiles/drone_pkg_genpy.dir/cmake_clean.cmake
+	cd /home/arl/NSSSIP2023/autonomy_ws/build/drone_pkg && $(CMAKE_COMMAND) -P CMakeFiles/drone_pkg_genpy.dir/cmake_clean.cmake
 .PHONY : drone_pkg/CMakeFiles/drone_pkg_genpy.dir/clean
 
 drone_pkg/CMakeFiles/drone_pkg_genpy.dir/depend:
-	cd /home/arl/autonomy_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/arl/autonomy_ws/src /home/arl/autonomy_ws/src/drone_pkg /home/arl/autonomy_ws/build /home/arl/autonomy_ws/build/drone_pkg /home/arl/autonomy_ws/build/drone_pkg/CMakeFiles/drone_pkg_genpy.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/arl/NSSSIP2023/autonomy_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/arl/NSSSIP2023/autonomy_ws/src /home/arl/NSSSIP2023/autonomy_ws/src/drone_pkg /home/arl/NSSSIP2023/autonomy_ws/build /home/arl/NSSSIP2023/autonomy_ws/build/drone_pkg /home/arl/NSSSIP2023/autonomy_ws/build/drone_pkg/CMakeFiles/drone_pkg_genpy.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : drone_pkg/CMakeFiles/drone_pkg_genpy.dir/depend
 

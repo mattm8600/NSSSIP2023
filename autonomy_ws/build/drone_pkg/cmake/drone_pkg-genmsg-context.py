@@ -1,7 +1,7 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
 messages_str = ""
-services_str = "/home/arl/autonomy_ws/src/drone_pkg/srv/PlaceSensor.srv;/home/arl/autonomy_ws/src/drone_pkg/srv/DroneOp.srv"
+services_str = "/home/arl/NSSSIP2023/autonomy_ws/src/drone_pkg/srv/PlaceSensor.srv;/home/arl/NSSSIP2023/autonomy_ws/src/drone_pkg/srv/DroneOp.srv"
 pkg_name = "drone_pkg"
 dependencies_str = "mavros_msgs;sensor_msgs;std_msgs;geographic_msgs;geometry_msgs"
 langs = "gencpp;geneus;genlisp;gennodejs;genpy"

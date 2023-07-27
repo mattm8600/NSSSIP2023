@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/arl/autonomy_ws/devel/share/gennodejs/ros/drone_pkg/srv/DroneOp.js"
-  "/home/arl/autonomy_ws/devel/share/gennodejs/ros/drone_pkg/srv/PlaceSensor.js"
+  "/home/arl/NSSSIP2023/autonomy_ws/devel/share/gennodejs/ros/drone_pkg/srv/DroneOp.js"
+  "/home/arl/NSSSIP2023/autonomy_ws/devel/share/gennodejs/ros/drone_pkg/srv/PlaceSensor.js"
   "CMakeFiles/drone_pkg_generate_messages_nodejs"
 )
 

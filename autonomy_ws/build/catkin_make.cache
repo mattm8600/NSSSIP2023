@@ -1,2 +1,2 @@
-computer_pkg:drone_pkg
--DCATKIN_DEVEL_PREFIX=/home/arl/autonomy_ws/devel -DCMAKE_INSTALL_PREFIX=/home/arl/autonomy_ws/install -G Unix Makefiles
+computer_pkg:drone_pkg:yolov5_ros
+-DCATKIN_DEVEL_PREFIX=/home/arl/NSSSIP2023/autonomy_ws/devel -DCMAKE_INSTALL_PREFIX=/home/arl/NSSSIP2023/autonomy_ws/install -G Unix Makefiles

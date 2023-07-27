@@ -43,41 +43,41 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/arl/autonomy_ws/src
+CMAKE_SOURCE_DIR = /home/arl/NSSSIP2023/autonomy_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/arl/autonomy_ws/build
+CMAKE_BINARY_DIR = /home/arl/NSSSIP2023/autonomy_ws/build
 
 # Utility rule file for drone_pkg_generate_messages_py.
 
 # Include the progress variables for this target.
 include drone_pkg/CMakeFiles/drone_pkg_generate_messages_py.dir/progress.make
 
-drone_pkg/CMakeFiles/drone_pkg_generate_messages_py: /home/arl/autonomy_ws/devel/lib/python3/dist-packages/drone_pkg/srv/_PlaceSensor.py
-drone_pkg/CMakeFiles/drone_pkg_generate_messages_py: /home/arl/autonomy_ws/devel/lib/python3/dist-packages/drone_pkg/srv/_DroneOp.py
-drone_pkg/CMakeFiles/drone_pkg_generate_messages_py: /home/arl/autonomy_ws/devel/lib/python3/dist-packages/drone_pkg/srv/__init__.py
+drone_pkg/CMakeFiles/drone_pkg_generate_messages_py: /home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/drone_pkg/srv/_PlaceSensor.py
+drone_pkg/CMakeFiles/drone_pkg_generate_messages_py: /home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/drone_pkg/srv/_DroneOp.py
+drone_pkg/CMakeFiles/drone_pkg_generate_messages_py: /home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/drone_pkg/srv/__init__.py
 
 
-/home/arl/autonomy_ws/devel/lib/python3/dist-packages/drone_pkg/srv/_PlaceSensor.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
-/home/arl/autonomy_ws/devel/lib/python3/dist-packages/drone_pkg/srv/_PlaceSensor.py: /home/arl/autonomy_ws/src/drone_pkg/srv/PlaceSensor.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/arl/autonomy_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python code from SRV drone_pkg/PlaceSensor"
-	cd /home/arl/autonomy_ws/build/drone_pkg && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/arl/autonomy_ws/src/drone_pkg/srv/PlaceSensor.srv -Imavros_msgs:/opt/ros/noetic/share/mavros_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p drone_pkg -o /home/arl/autonomy_ws/devel/lib/python3/dist-packages/drone_pkg/srv
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/drone_pkg/srv/_PlaceSensor.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/drone_pkg/srv/_PlaceSensor.py: /home/arl/NSSSIP2023/autonomy_ws/src/drone_pkg/srv/PlaceSensor.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/arl/NSSSIP2023/autonomy_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python code from SRV drone_pkg/PlaceSensor"
+	cd /home/arl/NSSSIP2023/autonomy_ws/build/drone_pkg && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/arl/NSSSIP2023/autonomy_ws/src/drone_pkg/srv/PlaceSensor.srv -Imavros_msgs:/opt/ros/noetic/share/mavros_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p drone_pkg -o /home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/drone_pkg/srv
 
-/home/arl/autonomy_ws/devel/lib/python3/dist-packages/drone_pkg/srv/_DroneOp.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
-/home/arl/autonomy_ws/devel/lib/python3/dist-packages/drone_pkg/srv/_DroneOp.py: /home/arl/autonomy_ws/src/drone_pkg/srv/DroneOp.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/arl/autonomy_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python code from SRV drone_pkg/DroneOp"
-	cd /home/arl/autonomy_ws/build/drone_pkg && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/arl/autonomy_ws/src/drone_pkg/srv/DroneOp.srv -Imavros_msgs:/opt/ros/noetic/share/mavros_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p drone_pkg -o /home/arl/autonomy_ws/devel/lib/python3/dist-packages/drone_pkg/srv
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/drone_pkg/srv/_DroneOp.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/drone_pkg/srv/_DroneOp.py: /home/arl/NSSSIP2023/autonomy_ws/src/drone_pkg/srv/DroneOp.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/arl/NSSSIP2023/autonomy_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python code from SRV drone_pkg/DroneOp"
+	cd /home/arl/NSSSIP2023/autonomy_ws/build/drone_pkg && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/arl/NSSSIP2023/autonomy_ws/src/drone_pkg/srv/DroneOp.srv -Imavros_msgs:/opt/ros/noetic/share/mavros_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p drone_pkg -o /home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/drone_pkg/srv
 
-/home/arl/autonomy_ws/devel/lib/python3/dist-packages/drone_pkg/srv/__init__.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
-/home/arl/autonomy_ws/devel/lib/python3/dist-packages/drone_pkg/srv/__init__.py: /home/arl/autonomy_ws/devel/lib/python3/dist-packages/drone_pkg/srv/_PlaceSensor.py
-/home/arl/autonomy_ws/devel/lib/python3/dist-packages/drone_pkg/srv/__init__.py: /home/arl/autonomy_ws/devel/lib/python3/dist-packages/drone_pkg/srv/_DroneOp.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/arl/autonomy_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python srv __init__.py for drone_pkg"
-	cd /home/arl/autonomy_ws/build/drone_pkg && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/arl/autonomy_ws/devel/lib/python3/dist-packages/drone_pkg/srv --initpy
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/drone_pkg/srv/__init__.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/drone_pkg/srv/__init__.py: /home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/drone_pkg/srv/_PlaceSensor.py
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/drone_pkg/srv/__init__.py: /home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/drone_pkg/srv/_DroneOp.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/arl/NSSSIP2023/autonomy_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python srv __init__.py for drone_pkg"
+	cd /home/arl/NSSSIP2023/autonomy_ws/build/drone_pkg && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/drone_pkg/srv --initpy
 
 drone_pkg_generate_messages_py: drone_pkg/CMakeFiles/drone_pkg_generate_messages_py
-drone_pkg_generate_messages_py: /home/arl/autonomy_ws/devel/lib/python3/dist-packages/drone_pkg/srv/_PlaceSensor.py
-drone_pkg_generate_messages_py: /home/arl/autonomy_ws/devel/lib/python3/dist-packages/drone_pkg/srv/_DroneOp.py
-drone_pkg_generate_messages_py: /home/arl/autonomy_ws/devel/lib/python3/dist-packages/drone_pkg/srv/__init__.py
+drone_pkg_generate_messages_py: /home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/drone_pkg/srv/_PlaceSensor.py
+drone_pkg_generate_messages_py: /home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/drone_pkg/srv/_DroneOp.py
+drone_pkg_generate_messages_py: /home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/drone_pkg/srv/__init__.py
 drone_pkg_generate_messages_py: drone_pkg/CMakeFiles/drone_pkg_generate_messages_py.dir/build.make
 
 .PHONY : drone_pkg_generate_messages_py
@@ -88,10 +88,10 @@ drone_pkg/CMakeFiles/drone_pkg_generate_messages_py.dir/build: drone_pkg_generat
 .PHONY : drone_pkg/CMakeFiles/drone_pkg_generate_messages_py.dir/build
 
 drone_pkg/CMakeFiles/drone_pkg_generate_messages_py.dir/clean:
-	cd /home/arl/autonomy_ws/build/drone_pkg && $(CMAKE_COMMAND) -P CMakeFiles/drone_pkg_generate_messages_py.dir/cmake_clean.cmake
+	cd /home/arl/NSSSIP2023/autonomy_ws/build/drone_pkg && $(CMAKE_COMMAND) -P CMakeFiles/drone_pkg_generate_messages_py.dir/cmake_clean.cmake
 .PHONY : drone_pkg/CMakeFiles/drone_pkg_generate_messages_py.dir/clean
 
 drone_pkg/CMakeFiles/drone_pkg_generate_messages_py.dir/depend:
-	cd /home/arl/autonomy_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/arl/autonomy_ws/src /home/arl/autonomy_ws/src/drone_pkg /home/arl/autonomy_ws/build /home/arl/autonomy_ws/build/drone_pkg /home/arl/autonomy_ws/build/drone_pkg/CMakeFiles/drone_pkg_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/arl/NSSSIP2023/autonomy_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/arl/NSSSIP2023/autonomy_ws/src /home/arl/NSSSIP2023/autonomy_ws/src/drone_pkg /home/arl/NSSSIP2023/autonomy_ws/build /home/arl/NSSSIP2023/autonomy_ws/build/drone_pkg /home/arl/NSSSIP2023/autonomy_ws/build/drone_pkg/CMakeFiles/drone_pkg_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : drone_pkg/CMakeFiles/drone_pkg_generate_messages_py.dir/depend
 

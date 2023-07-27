@@ -43,26 +43,49 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/arl/autonomy_ws/src
+CMAKE_SOURCE_DIR = /home/arl/NSSSIP2023/autonomy_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/arl/autonomy_ws/build
+CMAKE_BINARY_DIR = /home/arl/NSSSIP2023/autonomy_ws/build
 
 # Utility rule file for computer_pkg_generate_messages_lisp.
 
 # Include the progress variables for this target.
 include computer_pkg/CMakeFiles/computer_pkg_generate_messages_lisp.dir/progress.make
 
-computer_pkg/CMakeFiles/computer_pkg_generate_messages_lisp: /home/arl/autonomy_ws/devel/share/common-lisp/ros/computer_pkg/srv/PlaceSensor.lisp
+computer_pkg/CMakeFiles/computer_pkg_generate_messages_lisp: /home/arl/NSSSIP2023/autonomy_ws/devel/share/common-lisp/ros/computer_pkg/msg/AiDetection.lisp
+computer_pkg/CMakeFiles/computer_pkg_generate_messages_lisp: /home/arl/NSSSIP2023/autonomy_ws/devel/share/common-lisp/ros/computer_pkg/msg/BoundingBox.lisp
+computer_pkg/CMakeFiles/computer_pkg_generate_messages_lisp: /home/arl/NSSSIP2023/autonomy_ws/devel/share/common-lisp/ros/computer_pkg/msg/BoundingBoxes.lisp
+computer_pkg/CMakeFiles/computer_pkg_generate_messages_lisp: /home/arl/NSSSIP2023/autonomy_ws/devel/share/common-lisp/ros/computer_pkg/srv/PlaceSensor.lisp
 
 
-/home/arl/autonomy_ws/devel/share/common-lisp/ros/computer_pkg/srv/PlaceSensor.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
-/home/arl/autonomy_ws/devel/share/common-lisp/ros/computer_pkg/srv/PlaceSensor.lisp: /home/arl/autonomy_ws/src/computer_pkg/srv/PlaceSensor.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/arl/autonomy_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from computer_pkg/PlaceSensor.srv"
-	cd /home/arl/autonomy_ws/build/computer_pkg && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/arl/autonomy_ws/src/computer_pkg/srv/PlaceSensor.srv -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Imavros_msgs:/opt/ros/noetic/share/mavros_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p computer_pkg -o /home/arl/autonomy_ws/devel/share/common-lisp/ros/computer_pkg/srv
+/home/arl/NSSSIP2023/autonomy_ws/devel/share/common-lisp/ros/computer_pkg/msg/AiDetection.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
+/home/arl/NSSSIP2023/autonomy_ws/devel/share/common-lisp/ros/computer_pkg/msg/AiDetection.lisp: /home/arl/NSSSIP2023/autonomy_ws/src/computer_pkg/msg/AiDetection.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/arl/NSSSIP2023/autonomy_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from computer_pkg/AiDetection.msg"
+	cd /home/arl/NSSSIP2023/autonomy_ws/build/computer_pkg && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/arl/NSSSIP2023/autonomy_ws/src/computer_pkg/msg/AiDetection.msg -Icomputer_pkg:/home/arl/NSSSIP2023/autonomy_ws/src/computer_pkg/msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Imavros_msgs:/opt/ros/noetic/share/mavros_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p computer_pkg -o /home/arl/NSSSIP2023/autonomy_ws/devel/share/common-lisp/ros/computer_pkg/msg
+
+/home/arl/NSSSIP2023/autonomy_ws/devel/share/common-lisp/ros/computer_pkg/msg/BoundingBox.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
+/home/arl/NSSSIP2023/autonomy_ws/devel/share/common-lisp/ros/computer_pkg/msg/BoundingBox.lisp: /home/arl/NSSSIP2023/autonomy_ws/src/computer_pkg/msg/BoundingBox.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/arl/NSSSIP2023/autonomy_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Lisp code from computer_pkg/BoundingBox.msg"
+	cd /home/arl/NSSSIP2023/autonomy_ws/build/computer_pkg && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/arl/NSSSIP2023/autonomy_ws/src/computer_pkg/msg/BoundingBox.msg -Icomputer_pkg:/home/arl/NSSSIP2023/autonomy_ws/src/computer_pkg/msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Imavros_msgs:/opt/ros/noetic/share/mavros_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p computer_pkg -o /home/arl/NSSSIP2023/autonomy_ws/devel/share/common-lisp/ros/computer_pkg/msg
+
+/home/arl/NSSSIP2023/autonomy_ws/devel/share/common-lisp/ros/computer_pkg/msg/BoundingBoxes.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
+/home/arl/NSSSIP2023/autonomy_ws/devel/share/common-lisp/ros/computer_pkg/msg/BoundingBoxes.lisp: /home/arl/NSSSIP2023/autonomy_ws/src/computer_pkg/msg/BoundingBoxes.msg
+/home/arl/NSSSIP2023/autonomy_ws/devel/share/common-lisp/ros/computer_pkg/msg/BoundingBoxes.lisp: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/arl/NSSSIP2023/autonomy_ws/devel/share/common-lisp/ros/computer_pkg/msg/BoundingBoxes.lisp: /home/arl/NSSSIP2023/autonomy_ws/src/computer_pkg/msg/BoundingBox.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/arl/NSSSIP2023/autonomy_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Lisp code from computer_pkg/BoundingBoxes.msg"
+	cd /home/arl/NSSSIP2023/autonomy_ws/build/computer_pkg && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/arl/NSSSIP2023/autonomy_ws/src/computer_pkg/msg/BoundingBoxes.msg -Icomputer_pkg:/home/arl/NSSSIP2023/autonomy_ws/src/computer_pkg/msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Imavros_msgs:/opt/ros/noetic/share/mavros_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p computer_pkg -o /home/arl/NSSSIP2023/autonomy_ws/devel/share/common-lisp/ros/computer_pkg/msg
+
+/home/arl/NSSSIP2023/autonomy_ws/devel/share/common-lisp/ros/computer_pkg/srv/PlaceSensor.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
+/home/arl/NSSSIP2023/autonomy_ws/devel/share/common-lisp/ros/computer_pkg/srv/PlaceSensor.lisp: /home/arl/NSSSIP2023/autonomy_ws/src/computer_pkg/srv/PlaceSensor.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/arl/NSSSIP2023/autonomy_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Lisp code from computer_pkg/PlaceSensor.srv"
+	cd /home/arl/NSSSIP2023/autonomy_ws/build/computer_pkg && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/arl/NSSSIP2023/autonomy_ws/src/computer_pkg/srv/PlaceSensor.srv -Icomputer_pkg:/home/arl/NSSSIP2023/autonomy_ws/src/computer_pkg/msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Imavros_msgs:/opt/ros/noetic/share/mavros_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p computer_pkg -o /home/arl/NSSSIP2023/autonomy_ws/devel/share/common-lisp/ros/computer_pkg/srv
 
 computer_pkg_generate_messages_lisp: computer_pkg/CMakeFiles/computer_pkg_generate_messages_lisp
-computer_pkg_generate_messages_lisp: /home/arl/autonomy_ws/devel/share/common-lisp/ros/computer_pkg/srv/PlaceSensor.lisp
+computer_pkg_generate_messages_lisp: /home/arl/NSSSIP2023/autonomy_ws/devel/share/common-lisp/ros/computer_pkg/msg/AiDetection.lisp
+computer_pkg_generate_messages_lisp: /home/arl/NSSSIP2023/autonomy_ws/devel/share/common-lisp/ros/computer_pkg/msg/BoundingBox.lisp
+computer_pkg_generate_messages_lisp: /home/arl/NSSSIP2023/autonomy_ws/devel/share/common-lisp/ros/computer_pkg/msg/BoundingBoxes.lisp
+computer_pkg_generate_messages_lisp: /home/arl/NSSSIP2023/autonomy_ws/devel/share/common-lisp/ros/computer_pkg/srv/PlaceSensor.lisp
 computer_pkg_generate_messages_lisp: computer_pkg/CMakeFiles/computer_pkg_generate_messages_lisp.dir/build.make
 
 .PHONY : computer_pkg_generate_messages_lisp
@@ -73,10 +96,10 @@ computer_pkg/CMakeFiles/computer_pkg_generate_messages_lisp.dir/build: computer_
 .PHONY : computer_pkg/CMakeFiles/computer_pkg_generate_messages_lisp.dir/build
 
 computer_pkg/CMakeFiles/computer_pkg_generate_messages_lisp.dir/clean:
-	cd /home/arl/autonomy_ws/build/computer_pkg && $(CMAKE_COMMAND) -P CMakeFiles/computer_pkg_generate_messages_lisp.dir/cmake_clean.cmake
+	cd /home/arl/NSSSIP2023/autonomy_ws/build/computer_pkg && $(CMAKE_COMMAND) -P CMakeFiles/computer_pkg_generate_messages_lisp.dir/cmake_clean.cmake
 .PHONY : computer_pkg/CMakeFiles/computer_pkg_generate_messages_lisp.dir/clean
 
 computer_pkg/CMakeFiles/computer_pkg_generate_messages_lisp.dir/depend:
-	cd /home/arl/autonomy_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/arl/autonomy_ws/src /home/arl/autonomy_ws/src/computer_pkg /home/arl/autonomy_ws/build /home/arl/autonomy_ws/build/computer_pkg /home/arl/autonomy_ws/build/computer_pkg/CMakeFiles/computer_pkg_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/arl/NSSSIP2023/autonomy_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/arl/NSSSIP2023/autonomy_ws/src /home/arl/NSSSIP2023/autonomy_ws/src/computer_pkg /home/arl/NSSSIP2023/autonomy_ws/build /home/arl/NSSSIP2023/autonomy_ws/build/computer_pkg /home/arl/NSSSIP2023/autonomy_ws/build/computer_pkg/CMakeFiles/computer_pkg_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : computer_pkg/CMakeFiles/computer_pkg_generate_messages_lisp.dir/depend
 

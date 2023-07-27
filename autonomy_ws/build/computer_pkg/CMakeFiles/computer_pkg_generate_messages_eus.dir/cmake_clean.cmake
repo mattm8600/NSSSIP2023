@@ -1,6 +1,9 @@
 file(REMOVE_RECURSE
-  "/home/arl/autonomy_ws/devel/share/roseus/ros/computer_pkg/manifest.l"
-  "/home/arl/autonomy_ws/devel/share/roseus/ros/computer_pkg/srv/PlaceSensor.l"
+  "/home/arl/NSSSIP2023/autonomy_ws/devel/share/roseus/ros/computer_pkg/manifest.l"
+  "/home/arl/NSSSIP2023/autonomy_ws/devel/share/roseus/ros/computer_pkg/msg/AiDetection.l"
+  "/home/arl/NSSSIP2023/autonomy_ws/devel/share/roseus/ros/computer_pkg/msg/BoundingBox.l"
+  "/home/arl/NSSSIP2023/autonomy_ws/devel/share/roseus/ros/computer_pkg/msg/BoundingBoxes.l"
+  "/home/arl/NSSSIP2023/autonomy_ws/devel/share/roseus/ros/computer_pkg/srv/PlaceSensor.l"
   "CMakeFiles/computer_pkg_generate_messages_eus"
 )
 

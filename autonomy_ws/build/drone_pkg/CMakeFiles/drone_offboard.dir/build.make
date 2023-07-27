@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/arl/autonomy_ws/src
+CMAKE_SOURCE_DIR = /home/arl/NSSSIP2023/autonomy_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/arl/autonomy_ws/build
+CMAKE_BINARY_DIR = /home/arl/NSSSIP2023/autonomy_ws/build
 
 # Include any dependencies generated for this target.
 include drone_pkg/CMakeFiles/drone_offboard.dir/depend.make
@@ -58,17 +58,17 @@ include drone_pkg/CMakeFiles/drone_offboard.dir/progress.make
 include drone_pkg/CMakeFiles/drone_offboard.dir/flags.make
 
 drone_pkg/CMakeFiles/drone_offboard.dir/src/drone_offboard.cpp.o: drone_pkg/CMakeFiles/drone_offboard.dir/flags.make
-drone_pkg/CMakeFiles/drone_offboard.dir/src/drone_offboard.cpp.o: /home/arl/autonomy_ws/src/drone_pkg/src/drone_offboard.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/arl/autonomy_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object drone_pkg/CMakeFiles/drone_offboard.dir/src/drone_offboard.cpp.o"
-	cd /home/arl/autonomy_ws/build/drone_pkg && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/drone_offboard.dir/src/drone_offboard.cpp.o -c /home/arl/autonomy_ws/src/drone_pkg/src/drone_offboard.cpp
+drone_pkg/CMakeFiles/drone_offboard.dir/src/drone_offboard.cpp.o: /home/arl/NSSSIP2023/autonomy_ws/src/drone_pkg/src/drone_offboard.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/arl/NSSSIP2023/autonomy_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object drone_pkg/CMakeFiles/drone_offboard.dir/src/drone_offboard.cpp.o"
+	cd /home/arl/NSSSIP2023/autonomy_ws/build/drone_pkg && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/drone_offboard.dir/src/drone_offboard.cpp.o -c /home/arl/NSSSIP2023/autonomy_ws/src/drone_pkg/src/drone_offboard.cpp
 
 drone_pkg/CMakeFiles/drone_offboard.dir/src/drone_offboard.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/drone_offboard.dir/src/drone_offboard.cpp.i"
-	cd /home/arl/autonomy_ws/build/drone_pkg && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/arl/autonomy_ws/src/drone_pkg/src/drone_offboard.cpp > CMakeFiles/drone_offboard.dir/src/drone_offboard.cpp.i
+	cd /home/arl/NSSSIP2023/autonomy_ws/build/drone_pkg && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/arl/NSSSIP2023/autonomy_ws/src/drone_pkg/src/drone_offboard.cpp > CMakeFiles/drone_offboard.dir/src/drone_offboard.cpp.i
 
 drone_pkg/CMakeFiles/drone_offboard.dir/src/drone_offboard.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/drone_offboard.dir/src/drone_offboard.cpp.s"
-	cd /home/arl/autonomy_ws/build/drone_pkg && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/arl/autonomy_ws/src/drone_pkg/src/drone_offboard.cpp -o CMakeFiles/drone_offboard.dir/src/drone_offboard.cpp.s
+	cd /home/arl/NSSSIP2023/autonomy_ws/build/drone_pkg && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/arl/NSSSIP2023/autonomy_ws/src/drone_pkg/src/drone_offboard.cpp -o CMakeFiles/drone_offboard.dir/src/drone_offboard.cpp.s
 
 # Object files for target drone_offboard
 drone_offboard_OBJECTS = \
@@ -77,39 +77,39 @@ drone_offboard_OBJECTS = \
 # External object files for target drone_offboard
 drone_offboard_EXTERNAL_OBJECTS =
 
-/home/arl/autonomy_ws/devel/lib/drone_pkg/drone_offboard: drone_pkg/CMakeFiles/drone_offboard.dir/src/drone_offboard.cpp.o
-/home/arl/autonomy_ws/devel/lib/drone_pkg/drone_offboard: drone_pkg/CMakeFiles/drone_offboard.dir/build.make
-/home/arl/autonomy_ws/devel/lib/drone_pkg/drone_offboard: /opt/ros/noetic/lib/libroscpp.so
-/home/arl/autonomy_ws/devel/lib/drone_pkg/drone_offboard: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/arl/autonomy_ws/devel/lib/drone_pkg/drone_offboard: /usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0
-/home/arl/autonomy_ws/devel/lib/drone_pkg/drone_offboard: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0
-/home/arl/autonomy_ws/devel/lib/drone_pkg/drone_offboard: /opt/ros/noetic/lib/librosconsole.so
-/home/arl/autonomy_ws/devel/lib/drone_pkg/drone_offboard: /opt/ros/noetic/lib/librosconsole_log4cxx.so
-/home/arl/autonomy_ws/devel/lib/drone_pkg/drone_offboard: /opt/ros/noetic/lib/librosconsole_backend_interface.so
-/home/arl/autonomy_ws/devel/lib/drone_pkg/drone_offboard: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
-/home/arl/autonomy_ws/devel/lib/drone_pkg/drone_offboard: /usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0
-/home/arl/autonomy_ws/devel/lib/drone_pkg/drone_offboard: /opt/ros/noetic/lib/libxmlrpcpp.so
-/home/arl/autonomy_ws/devel/lib/drone_pkg/drone_offboard: /opt/ros/noetic/lib/libroscpp_serialization.so
-/home/arl/autonomy_ws/devel/lib/drone_pkg/drone_offboard: /opt/ros/noetic/lib/librostime.so
-/home/arl/autonomy_ws/devel/lib/drone_pkg/drone_offboard: /usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0
-/home/arl/autonomy_ws/devel/lib/drone_pkg/drone_offboard: /opt/ros/noetic/lib/libcpp_common.so
-/home/arl/autonomy_ws/devel/lib/drone_pkg/drone_offboard: /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
-/home/arl/autonomy_ws/devel/lib/drone_pkg/drone_offboard: /usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0
-/home/arl/autonomy_ws/devel/lib/drone_pkg/drone_offboard: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
-/home/arl/autonomy_ws/devel/lib/drone_pkg/drone_offboard: drone_pkg/CMakeFiles/drone_offboard.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/arl/autonomy_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/arl/autonomy_ws/devel/lib/drone_pkg/drone_offboard"
-	cd /home/arl/autonomy_ws/build/drone_pkg && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/drone_offboard.dir/link.txt --verbose=$(VERBOSE)
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/drone_pkg/drone_offboard: drone_pkg/CMakeFiles/drone_offboard.dir/src/drone_offboard.cpp.o
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/drone_pkg/drone_offboard: drone_pkg/CMakeFiles/drone_offboard.dir/build.make
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/drone_pkg/drone_offboard: /opt/ros/noetic/lib/libroscpp.so
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/drone_pkg/drone_offboard: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/drone_pkg/drone_offboard: /usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/drone_pkg/drone_offboard: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/drone_pkg/drone_offboard: /opt/ros/noetic/lib/librosconsole.so
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/drone_pkg/drone_offboard: /opt/ros/noetic/lib/librosconsole_log4cxx.so
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/drone_pkg/drone_offboard: /opt/ros/noetic/lib/librosconsole_backend_interface.so
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/drone_pkg/drone_offboard: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/drone_pkg/drone_offboard: /usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/drone_pkg/drone_offboard: /opt/ros/noetic/lib/libxmlrpcpp.so
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/drone_pkg/drone_offboard: /opt/ros/noetic/lib/libroscpp_serialization.so
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/drone_pkg/drone_offboard: /opt/ros/noetic/lib/librostime.so
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/drone_pkg/drone_offboard: /usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/drone_pkg/drone_offboard: /opt/ros/noetic/lib/libcpp_common.so
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/drone_pkg/drone_offboard: /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/drone_pkg/drone_offboard: /usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/drone_pkg/drone_offboard: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/drone_pkg/drone_offboard: drone_pkg/CMakeFiles/drone_offboard.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/arl/NSSSIP2023/autonomy_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/arl/NSSSIP2023/autonomy_ws/devel/lib/drone_pkg/drone_offboard"
+	cd /home/arl/NSSSIP2023/autonomy_ws/build/drone_pkg && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/drone_offboard.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-drone_pkg/CMakeFiles/drone_offboard.dir/build: /home/arl/autonomy_ws/devel/lib/drone_pkg/drone_offboard
+drone_pkg/CMakeFiles/drone_offboard.dir/build: /home/arl/NSSSIP2023/autonomy_ws/devel/lib/drone_pkg/drone_offboard
 
 .PHONY : drone_pkg/CMakeFiles/drone_offboard.dir/build
 
 drone_pkg/CMakeFiles/drone_offboard.dir/clean:
-	cd /home/arl/autonomy_ws/build/drone_pkg && $(CMAKE_COMMAND) -P CMakeFiles/drone_offboard.dir/cmake_clean.cmake
+	cd /home/arl/NSSSIP2023/autonomy_ws/build/drone_pkg && $(CMAKE_COMMAND) -P CMakeFiles/drone_offboard.dir/cmake_clean.cmake
 .PHONY : drone_pkg/CMakeFiles/drone_offboard.dir/clean
 
 drone_pkg/CMakeFiles/drone_offboard.dir/depend:
-	cd /home/arl/autonomy_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/arl/autonomy_ws/src /home/arl/autonomy_ws/src/drone_pkg /home/arl/autonomy_ws/build /home/arl/autonomy_ws/build/drone_pkg /home/arl/autonomy_ws/build/drone_pkg/CMakeFiles/drone_offboard.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/arl/NSSSIP2023/autonomy_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/arl/NSSSIP2023/autonomy_ws/src /home/arl/NSSSIP2023/autonomy_ws/src/drone_pkg /home/arl/NSSSIP2023/autonomy_ws/build /home/arl/NSSSIP2023/autonomy_ws/build/drone_pkg /home/arl/NSSSIP2023/autonomy_ws/build/drone_pkg/CMakeFiles/drone_offboard.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : drone_pkg/CMakeFiles/drone_offboard.dir/depend
 

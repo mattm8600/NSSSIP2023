@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "/home/arl/autonomy_ws/devel/lib/python3/dist-packages/drone_pkg/srv/_DroneOp.py"
-  "/home/arl/autonomy_ws/devel/lib/python3/dist-packages/drone_pkg/srv/_PlaceSensor.py"
-  "/home/arl/autonomy_ws/devel/lib/python3/dist-packages/drone_pkg/srv/__init__.py"
+  "/home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/drone_pkg/srv/_DroneOp.py"
+  "/home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/drone_pkg/srv/_PlaceSensor.py"
+  "/home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/drone_pkg/srv/__init__.py"
   "CMakeFiles/drone_pkg_generate_messages_py"
 )
 

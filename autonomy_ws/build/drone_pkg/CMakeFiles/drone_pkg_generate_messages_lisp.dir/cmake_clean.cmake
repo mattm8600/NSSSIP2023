@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/arl/autonomy_ws/devel/share/common-lisp/ros/drone_pkg/srv/DroneOp.lisp"
-  "/home/arl/autonomy_ws/devel/share/common-lisp/ros/drone_pkg/srv/PlaceSensor.lisp"
+  "/home/arl/NSSSIP2023/autonomy_ws/devel/share/common-lisp/ros/drone_pkg/srv/DroneOp.lisp"
+  "/home/arl/NSSSIP2023/autonomy_ws/devel/share/common-lisp/ros/drone_pkg/srv/PlaceSensor.lisp"
   "CMakeFiles/drone_pkg_generate_messages_lisp"
 )
 

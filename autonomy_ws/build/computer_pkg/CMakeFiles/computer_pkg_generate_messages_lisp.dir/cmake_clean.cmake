@@ -1,5 +1,8 @@
 file(REMOVE_RECURSE
-  "/home/arl/autonomy_ws/devel/share/common-lisp/ros/computer_pkg/srv/PlaceSensor.lisp"
+  "/home/arl/NSSSIP2023/autonomy_ws/devel/share/common-lisp/ros/computer_pkg/msg/AiDetection.lisp"
+  "/home/arl/NSSSIP2023/autonomy_ws/devel/share/common-lisp/ros/computer_pkg/msg/BoundingBox.lisp"
+  "/home/arl/NSSSIP2023/autonomy_ws/devel/share/common-lisp/ros/computer_pkg/msg/BoundingBoxes.lisp"
+  "/home/arl/NSSSIP2023/autonomy_ws/devel/share/common-lisp/ros/computer_pkg/srv/PlaceSensor.lisp"
   "CMakeFiles/computer_pkg_generate_messages_lisp"
 )
 

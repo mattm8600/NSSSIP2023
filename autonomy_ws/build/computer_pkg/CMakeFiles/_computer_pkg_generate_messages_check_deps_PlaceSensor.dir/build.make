@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/arl/autonomy_ws/src
+CMAKE_SOURCE_DIR = /home/arl/NSSSIP2023/autonomy_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/arl/autonomy_ws/build
+CMAKE_BINARY_DIR = /home/arl/NSSSIP2023/autonomy_ws/build
 
 # Utility rule file for _computer_pkg_generate_messages_check_deps_PlaceSensor.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/arl/autonomy_ws/build
 include computer_pkg/CMakeFiles/_computer_pkg_generate_messages_check_deps_PlaceSensor.dir/progress.make
 
 computer_pkg/CMakeFiles/_computer_pkg_generate_messages_check_deps_PlaceSensor:
-	cd /home/arl/autonomy_ws/build/computer_pkg && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py computer_pkg /home/arl/autonomy_ws/src/computer_pkg/srv/PlaceSensor.srv 
+	cd /home/arl/NSSSIP2023/autonomy_ws/build/computer_pkg && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py computer_pkg /home/arl/NSSSIP2023/autonomy_ws/src/computer_pkg/srv/PlaceSensor.srv 
 
 _computer_pkg_generate_messages_check_deps_PlaceSensor: computer_pkg/CMakeFiles/_computer_pkg_generate_messages_check_deps_PlaceSensor
 _computer_pkg_generate_messages_check_deps_PlaceSensor: computer_pkg/CMakeFiles/_computer_pkg_generate_messages_check_deps_PlaceSensor.dir/build.make
@@ -67,10 +67,10 @@ computer_pkg/CMakeFiles/_computer_pkg_generate_messages_check_deps_PlaceSensor.d
 .PHONY : computer_pkg/CMakeFiles/_computer_pkg_generate_messages_check_deps_PlaceSensor.dir/build
 
 computer_pkg/CMakeFiles/_computer_pkg_generate_messages_check_deps_PlaceSensor.dir/clean:
-	cd /home/arl/autonomy_ws/build/computer_pkg && $(CMAKE_COMMAND) -P CMakeFiles/_computer_pkg_generate_messages_check_deps_PlaceSensor.dir/cmake_clean.cmake
+	cd /home/arl/NSSSIP2023/autonomy_ws/build/computer_pkg && $(CMAKE_COMMAND) -P CMakeFiles/_computer_pkg_generate_messages_check_deps_PlaceSensor.dir/cmake_clean.cmake
 .PHONY : computer_pkg/CMakeFiles/_computer_pkg_generate_messages_check_deps_PlaceSensor.dir/clean
 
 computer_pkg/CMakeFiles/_computer_pkg_generate_messages_check_deps_PlaceSensor.dir/depend:
-	cd /home/arl/autonomy_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/arl/autonomy_ws/src /home/arl/autonomy_ws/src/computer_pkg /home/arl/autonomy_ws/build /home/arl/autonomy_ws/build/computer_pkg /home/arl/autonomy_ws/build/computer_pkg/CMakeFiles/_computer_pkg_generate_messages_check_deps_PlaceSensor.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/arl/NSSSIP2023/autonomy_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/arl/NSSSIP2023/autonomy_ws/src /home/arl/NSSSIP2023/autonomy_ws/src/computer_pkg /home/arl/NSSSIP2023/autonomy_ws/build /home/arl/NSSSIP2023/autonomy_ws/build/computer_pkg /home/arl/NSSSIP2023/autonomy_ws/build/computer_pkg/CMakeFiles/_computer_pkg_generate_messages_check_deps_PlaceSensor.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : computer_pkg/CMakeFiles/_computer_pkg_generate_messages_check_deps_PlaceSensor.dir/depend
 

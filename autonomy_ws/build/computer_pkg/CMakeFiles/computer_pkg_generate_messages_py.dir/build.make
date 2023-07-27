@@ -43,33 +43,69 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/arl/autonomy_ws/src
+CMAKE_SOURCE_DIR = /home/arl/NSSSIP2023/autonomy_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/arl/autonomy_ws/build
+CMAKE_BINARY_DIR = /home/arl/NSSSIP2023/autonomy_ws/build
 
 # Utility rule file for computer_pkg_generate_messages_py.
 
 # Include the progress variables for this target.
 include computer_pkg/CMakeFiles/computer_pkg_generate_messages_py.dir/progress.make
 
-computer_pkg/CMakeFiles/computer_pkg_generate_messages_py: /home/arl/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/srv/_PlaceSensor.py
-computer_pkg/CMakeFiles/computer_pkg_generate_messages_py: /home/arl/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/srv/__init__.py
+computer_pkg/CMakeFiles/computer_pkg_generate_messages_py: /home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/msg/_AiDetection.py
+computer_pkg/CMakeFiles/computer_pkg_generate_messages_py: /home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/msg/_BoundingBox.py
+computer_pkg/CMakeFiles/computer_pkg_generate_messages_py: /home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/msg/_BoundingBoxes.py
+computer_pkg/CMakeFiles/computer_pkg_generate_messages_py: /home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/srv/_PlaceSensor.py
+computer_pkg/CMakeFiles/computer_pkg_generate_messages_py: /home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/msg/__init__.py
+computer_pkg/CMakeFiles/computer_pkg_generate_messages_py: /home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/srv/__init__.py
 
 
-/home/arl/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/srv/_PlaceSensor.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
-/home/arl/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/srv/_PlaceSensor.py: /home/arl/autonomy_ws/src/computer_pkg/srv/PlaceSensor.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/arl/autonomy_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python code from SRV computer_pkg/PlaceSensor"
-	cd /home/arl/autonomy_ws/build/computer_pkg && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/arl/autonomy_ws/src/computer_pkg/srv/PlaceSensor.srv -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Imavros_msgs:/opt/ros/noetic/share/mavros_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p computer_pkg -o /home/arl/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/srv
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/msg/_AiDetection.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/msg/_AiDetection.py: /home/arl/NSSSIP2023/autonomy_ws/src/computer_pkg/msg/AiDetection.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/arl/NSSSIP2023/autonomy_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG computer_pkg/AiDetection"
+	cd /home/arl/NSSSIP2023/autonomy_ws/build/computer_pkg && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/arl/NSSSIP2023/autonomy_ws/src/computer_pkg/msg/AiDetection.msg -Icomputer_pkg:/home/arl/NSSSIP2023/autonomy_ws/src/computer_pkg/msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Imavros_msgs:/opt/ros/noetic/share/mavros_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p computer_pkg -o /home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/msg
 
-/home/arl/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/srv/__init__.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
-/home/arl/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/srv/__init__.py: /home/arl/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/srv/_PlaceSensor.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/arl/autonomy_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python srv __init__.py for computer_pkg"
-	cd /home/arl/autonomy_ws/build/computer_pkg && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/arl/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/srv --initpy
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/msg/_BoundingBox.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/msg/_BoundingBox.py: /home/arl/NSSSIP2023/autonomy_ws/src/computer_pkg/msg/BoundingBox.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/arl/NSSSIP2023/autonomy_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG computer_pkg/BoundingBox"
+	cd /home/arl/NSSSIP2023/autonomy_ws/build/computer_pkg && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/arl/NSSSIP2023/autonomy_ws/src/computer_pkg/msg/BoundingBox.msg -Icomputer_pkg:/home/arl/NSSSIP2023/autonomy_ws/src/computer_pkg/msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Imavros_msgs:/opt/ros/noetic/share/mavros_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p computer_pkg -o /home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/msg
+
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/msg/_BoundingBoxes.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/msg/_BoundingBoxes.py: /home/arl/NSSSIP2023/autonomy_ws/src/computer_pkg/msg/BoundingBoxes.msg
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/msg/_BoundingBoxes.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/msg/_BoundingBoxes.py: /home/arl/NSSSIP2023/autonomy_ws/src/computer_pkg/msg/BoundingBox.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/arl/NSSSIP2023/autonomy_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python from MSG computer_pkg/BoundingBoxes"
+	cd /home/arl/NSSSIP2023/autonomy_ws/build/computer_pkg && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/arl/NSSSIP2023/autonomy_ws/src/computer_pkg/msg/BoundingBoxes.msg -Icomputer_pkg:/home/arl/NSSSIP2023/autonomy_ws/src/computer_pkg/msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Imavros_msgs:/opt/ros/noetic/share/mavros_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p computer_pkg -o /home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/msg
+
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/srv/_PlaceSensor.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/srv/_PlaceSensor.py: /home/arl/NSSSIP2023/autonomy_ws/src/computer_pkg/srv/PlaceSensor.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/arl/NSSSIP2023/autonomy_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python code from SRV computer_pkg/PlaceSensor"
+	cd /home/arl/NSSSIP2023/autonomy_ws/build/computer_pkg && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/arl/NSSSIP2023/autonomy_ws/src/computer_pkg/srv/PlaceSensor.srv -Icomputer_pkg:/home/arl/NSSSIP2023/autonomy_ws/src/computer_pkg/msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Imavros_msgs:/opt/ros/noetic/share/mavros_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p computer_pkg -o /home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/srv
+
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/msg/__init__.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/msg/__init__.py: /home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/msg/_AiDetection.py
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/msg/__init__.py: /home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/msg/_BoundingBox.py
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/msg/__init__.py: /home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/msg/_BoundingBoxes.py
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/msg/__init__.py: /home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/srv/_PlaceSensor.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/arl/NSSSIP2023/autonomy_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Python msg __init__.py for computer_pkg"
+	cd /home/arl/NSSSIP2023/autonomy_ws/build/computer_pkg && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/msg --initpy
+
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/srv/__init__.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/srv/__init__.py: /home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/msg/_AiDetection.py
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/srv/__init__.py: /home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/msg/_BoundingBox.py
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/srv/__init__.py: /home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/msg/_BoundingBoxes.py
+/home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/srv/__init__.py: /home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/srv/_PlaceSensor.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/arl/NSSSIP2023/autonomy_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Python srv __init__.py for computer_pkg"
+	cd /home/arl/NSSSIP2023/autonomy_ws/build/computer_pkg && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/srv --initpy
 
 computer_pkg_generate_messages_py: computer_pkg/CMakeFiles/computer_pkg_generate_messages_py
-computer_pkg_generate_messages_py: /home/arl/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/srv/_PlaceSensor.py
-computer_pkg_generate_messages_py: /home/arl/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/srv/__init__.py
+computer_pkg_generate_messages_py: /home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/msg/_AiDetection.py
+computer_pkg_generate_messages_py: /home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/msg/_BoundingBox.py
+computer_pkg_generate_messages_py: /home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/msg/_BoundingBoxes.py
+computer_pkg_generate_messages_py: /home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/srv/_PlaceSensor.py
+computer_pkg_generate_messages_py: /home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/msg/__init__.py
+computer_pkg_generate_messages_py: /home/arl/NSSSIP2023/autonomy_ws/devel/lib/python3/dist-packages/computer_pkg/srv/__init__.py
 computer_pkg_generate_messages_py: computer_pkg/CMakeFiles/computer_pkg_generate_messages_py.dir/build.make
 
 .PHONY : computer_pkg_generate_messages_py
@@ -80,10 +116,10 @@ computer_pkg/CMakeFiles/computer_pkg_generate_messages_py.dir/build: computer_pk
 .PHONY : computer_pkg/CMakeFiles/computer_pkg_generate_messages_py.dir/build
 
 computer_pkg/CMakeFiles/computer_pkg_generate_messages_py.dir/clean:
-	cd /home/arl/autonomy_ws/build/computer_pkg && $(CMAKE_COMMAND) -P CMakeFiles/computer_pkg_generate_messages_py.dir/cmake_clean.cmake
+	cd /home/arl/NSSSIP2023/autonomy_ws/build/computer_pkg && $(CMAKE_COMMAND) -P CMakeFiles/computer_pkg_generate_messages_py.dir/cmake_clean.cmake
 .PHONY : computer_pkg/CMakeFiles/computer_pkg_generate_messages_py.dir/clean
 
 computer_pkg/CMakeFiles/computer_pkg_generate_messages_py.dir/depend:
-	cd /home/arl/autonomy_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/arl/autonomy_ws/src /home/arl/autonomy_ws/src/computer_pkg /home/arl/autonomy_ws/build /home/arl/autonomy_ws/build/computer_pkg /home/arl/autonomy_ws/build/computer_pkg/CMakeFiles/computer_pkg_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/arl/NSSSIP2023/autonomy_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/arl/NSSSIP2023/autonomy_ws/src /home/arl/NSSSIP2023/autonomy_ws/src/computer_pkg /home/arl/NSSSIP2023/autonomy_ws/build /home/arl/NSSSIP2023/autonomy_ws/build/computer_pkg /home/arl/NSSSIP2023/autonomy_ws/build/computer_pkg/CMakeFiles/computer_pkg_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : computer_pkg/CMakeFiles/computer_pkg_generate_messages_py.dir/depend
 

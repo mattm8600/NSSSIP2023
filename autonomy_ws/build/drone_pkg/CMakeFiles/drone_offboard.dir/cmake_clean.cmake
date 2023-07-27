@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/arl/autonomy_ws/devel/lib/drone_pkg/drone_offboard"
-  "/home/arl/autonomy_ws/devel/lib/drone_pkg/drone_offboard.pdb"
+  "/home/arl/NSSSIP2023/autonomy_ws/devel/lib/drone_pkg/drone_offboard"
+  "/home/arl/NSSSIP2023/autonomy_ws/devel/lib/drone_pkg/drone_offboard.pdb"
   "CMakeFiles/drone_offboard.dir/src/drone_offboard.cpp.o"
 )
 

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/arl/autonomy_ws/src
+CMAKE_SOURCE_DIR = /home/arl/NSSSIP2023/autonomy_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/arl/autonomy_ws/build
+CMAKE_BINARY_DIR = /home/arl/NSSSIP2023/autonomy_ws/build
 
 # Utility rule file for computer_pkg_generate_messages.
 
@@ -63,10 +63,10 @@ computer_pkg/CMakeFiles/computer_pkg_generate_messages.dir/build: computer_pkg_g
 .PHONY : computer_pkg/CMakeFiles/computer_pkg_generate_messages.dir/build
 
 computer_pkg/CMakeFiles/computer_pkg_generate_messages.dir/clean:
-	cd /home/arl/autonomy_ws/build/computer_pkg && $(CMAKE_COMMAND) -P CMakeFiles/computer_pkg_generate_messages.dir/cmake_clean.cmake
+	cd /home/arl/NSSSIP2023/autonomy_ws/build/computer_pkg && $(CMAKE_COMMAND) -P CMakeFiles/computer_pkg_generate_messages.dir/cmake_clean.cmake
 .PHONY : computer_pkg/CMakeFiles/computer_pkg_generate_messages.dir/clean
 
 computer_pkg/CMakeFiles/computer_pkg_generate_messages.dir/depend:
-	cd /home/arl/autonomy_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/arl/autonomy_ws/src /home/arl/autonomy_ws/src/computer_pkg /home/arl/autonomy_ws/build /home/arl/autonomy_ws/build/computer_pkg /home/arl/autonomy_ws/build/computer_pkg/CMakeFiles/computer_pkg_generate_messages.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/arl/NSSSIP2023/autonomy_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/arl/NSSSIP2023/autonomy_ws/src /home/arl/NSSSIP2023/autonomy_ws/src/computer_pkg /home/arl/NSSSIP2023/autonomy_ws/build /home/arl/NSSSIP2023/autonomy_ws/build/computer_pkg /home/arl/NSSSIP2023/autonomy_ws/build/computer_pkg/CMakeFiles/computer_pkg_generate_messages.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : computer_pkg/CMakeFiles/computer_pkg_generate_messages.dir/depend
 
