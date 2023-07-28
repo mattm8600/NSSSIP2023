@@ -7,3 +7,4 @@
 subdirs("gtest")
 subdirs("computer_pkg")
 subdirs("drone_pkg")
+subdirs("yolov5_ros")
