@@ -6,6 +6,22 @@
 
 #IncludeRegexTransform: 
 
+/home/arl/NSSSIP2023/devel/include/computer_pkg/AiDetection.h
+string
+-
+vector
+-
+memory
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+
 /home/arl/NSSSIP2023/src/computer_pkg/src/tflite_filter.cpp
 ros/ros.h
 -

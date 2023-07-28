@@ -75,7 +75,7 @@ endif ()
 
 ## Declare a catkin package
 catkin_package(
-  CATKIN_DEPENDS 
+  CATKIN_DEPENDS
   message_runtime
   geographic_msgs
   roscpp
@@ -83,7 +83,6 @@ catkin_package(
   sensor_msgs
   std_msgs
   Eigen
-
 )
 
 include_directories(include
