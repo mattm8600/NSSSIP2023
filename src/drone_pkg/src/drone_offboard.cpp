@@ -129,7 +129,7 @@ void set_global2local_target(double lat1, double lon1, double lat2, double lon2)
     //cout << "localized target coords = [" << target_xy[0] << "," << target_xy[1] << "]" << endl;
 }
 
-void fly_to_target(ros::Publisher pos_pub_mavros, ros::Rate loop_rate){
+void fly_to_target(double target_lat, double target_lon, ros::Publisher pos_pub_mavros, ros::Rate loop_rate){
     //raise to cruising height
     target_pose.position.z = 3.0;
     for(int i = 60; ros::ok() && i > 0; --i){
@@ -138,6 +138,8 @@ void fly_to_target(ros::Publisher pos_pub_mavros, ros::Rate loop_rate){
     }
 
     //set target coordinates
+    ros::spinOnce();
+    set_global2local_target(lat, lon, target_lat, target_lon);
     target_pose.position.x = target_xy[0];
     target_pose.position.y = target_xy[1];
     
@@ -209,12 +211,8 @@ int main(int argc, char **argv){
                 servo_state.data = 1;
                 servo_pub.publish(servo_state);
 
-                //set local target
-                ros::spinOnce();
-                set_global2local_target(lat, lon, drone_state.response.target_latitude, drone_state.response.target_longitude);
-
                 //fly to target
-                fly_to_target(local_pos_pub_mavros, loop_rate);
+                fly_to_target(drone_state.response.target_latitude, drone_state.response.target_longitude, local_pos_pub_mavros, loop_rate);
                 
                 //lower height
                 target_pose.position.z = 0.5;
@@ -285,12 +283,8 @@ int main(int argc, char **argv){
             servo_state.data = 0;
             servo_pub.publish(servo_state);
 
-            //convert global target to local target
-            ros::spinOnce();
-            set_global2local_target(lat, lon, target_lat, target_lon);
-
             //fly to target locations
-            fly_to_target(local_pos_pub_mavros, loop_rate);
+            fly_to_target(target_lat, target_lon, local_pos_pub_mavros, loop_rate);
 
             //wait for sensor to be detected
             ros::spinOnce();
