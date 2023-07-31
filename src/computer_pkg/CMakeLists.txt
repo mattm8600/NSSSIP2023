@@ -24,8 +24,6 @@ find_package(
 add_message_files(
   FILES
   AiDetection.msg
-  BoundingBox.msg
-  BoundingBoxes.msg
 )
 
 ## Generate services in the 'srv' folder
