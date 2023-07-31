@@ -10,7 +10,7 @@ from cv_bridge import CvBridge
 from pathlib import Path
 import os
 import sys
-from offboard_testing.msg import AiDetection
+from computer_pkg.msg import AiDetection
 from rostopic import get_topic_type
 from sensor_msgs.msg import Image, CompressedImage
 from detection_msgs.msg import BoundingBox, BoundingBoxes
