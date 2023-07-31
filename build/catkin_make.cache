@@ -1,2 +1,2 @@
-computer_pkg:drone_pkg:yolov5_ros
+computer_pkg:detection_msgs:drone_pkg:yolov5_ros
 -DCATKIN_DEVEL_PREFIX=/home/arl/NSSSIP2023/devel -DCMAKE_INSTALL_PREFIX=/home/arl/NSSSIP2023/install -G Unix Makefiles

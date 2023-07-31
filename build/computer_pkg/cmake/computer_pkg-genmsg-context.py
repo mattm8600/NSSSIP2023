@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/home/arl/NSSSIP2023/src/computer_pkg/msg/AiDetection.msg;/home/arl/NSSSIP2023/src/computer_pkg/msg/BoundingBox.msg;/home/arl/NSSSIP2023/src/computer_pkg/msg/BoundingBoxes.msg"
+messages_str = "/home/arl/NSSSIP2023/src/computer_pkg/msg/AiDetection.msg"
 services_str = "/home/arl/NSSSIP2023/src/computer_pkg/srv/PlaceSensor.srv"
 pkg_name = "computer_pkg"
 dependencies_str = "geographic_msgs;mavros_msgs;sensor_msgs;std_msgs;geometry_msgs"

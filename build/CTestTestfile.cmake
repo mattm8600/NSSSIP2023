@@ -5,6 +5,7 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("gtest")
+subdirs("detection_msgs")
 subdirs("computer_pkg")
 subdirs("drone_pkg")
 subdirs("yolov5_ros")

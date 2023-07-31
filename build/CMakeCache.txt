@@ -416,6 +416,15 @@ computer_pkg_SOURCE_DIR:STATIC=/home/arl/NSSSIP2023/src/computer_pkg
 cpp_common_DIR:PATH=/opt/ros/noetic/share/cpp_common/cmake
 
 //Value Computed by CMake
+detection_msgs_BINARY_DIR:STATIC=/home/arl/NSSSIP2023/build/detection_msgs
+
+//The directory containing a CMake configuration file for detection_msgs.
+detection_msgs_DIR:PATH=/home/arl/NSSSIP2023/devel/share/detection_msgs/cmake
+
+//Value Computed by CMake
+detection_msgs_SOURCE_DIR:STATIC=/home/arl/NSSSIP2023/src/detection_msgs
+
+//Value Computed by CMake
 drone_pkg_BINARY_DIR:STATIC=/home/arl/NSSSIP2023/build/drone_pkg
 
 //Value Computed by CMake
@@ -690,7 +699,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=7
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=8
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

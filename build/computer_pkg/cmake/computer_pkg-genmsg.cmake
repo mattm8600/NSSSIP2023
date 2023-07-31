@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "computer_pkg: 3 messages, 1 services")
+message(STATUS "computer_pkg: 1 messages, 1 services")
 
 set(MSG_I_FLAGS "-Icomputer_pkg:/home/arl/NSSSIP2023/src/computer_pkg/msg;-Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg;-Imavros_msgs:/opt/ros/noetic/share/mavros_msgs/cmake/../msg;-Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg;-Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg;-Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg")
 
@@ -22,16 +22,6 @@ add_custom_target(_computer_pkg_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "computer_pkg" "/home/arl/NSSSIP2023/src/computer_pkg/msg/AiDetection.msg" ""
 )
 
-get_filename_component(_filename "/home/arl/NSSSIP2023/src/computer_pkg/msg/BoundingBox.msg" NAME_WE)
-add_custom_target(_computer_pkg_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "computer_pkg" "/home/arl/NSSSIP2023/src/computer_pkg/msg/BoundingBox.msg" ""
-)
-
-get_filename_component(_filename "/home/arl/NSSSIP2023/src/computer_pkg/msg/BoundingBoxes.msg" NAME_WE)
-add_custom_target(_computer_pkg_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "computer_pkg" "/home/arl/NSSSIP2023/src/computer_pkg/msg/BoundingBoxes.msg" "computer_pkg/BoundingBox:std_msgs/Header"
-)
-
 get_filename_component(_filename "/home/arl/NSSSIP2023/src/computer_pkg/srv/PlaceSensor.srv" NAME_WE)
 add_custom_target(_computer_pkg_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "computer_pkg" "/home/arl/NSSSIP2023/src/computer_pkg/srv/PlaceSensor.srv" ""
@@ -47,18 +37,6 @@ _generate_msg_cpp(computer_pkg
   "/home/arl/NSSSIP2023/src/computer_pkg/msg/AiDetection.msg"
   "${MSG_I_FLAGS}"
   ""
-  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/computer_pkg
-)
-_generate_msg_cpp(computer_pkg
-  "/home/arl/NSSSIP2023/src/computer_pkg/msg/BoundingBox.msg"
-  "${MSG_I_FLAGS}"
-  ""
-  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/computer_pkg
-)
-_generate_msg_cpp(computer_pkg
-  "/home/arl/NSSSIP2023/src/computer_pkg/msg/BoundingBoxes.msg"
-  "${MSG_I_FLAGS}"
-  "/home/arl/NSSSIP2023/src/computer_pkg/msg/BoundingBox.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/computer_pkg
 )
 
@@ -84,10 +62,6 @@ add_dependencies(computer_pkg_generate_messages computer_pkg_generate_messages_c
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/arl/NSSSIP2023/src/computer_pkg/msg/AiDetection.msg" NAME_WE)
 add_dependencies(computer_pkg_generate_messages_cpp _computer_pkg_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/arl/NSSSIP2023/src/computer_pkg/msg/BoundingBox.msg" NAME_WE)
-add_dependencies(computer_pkg_generate_messages_cpp _computer_pkg_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/arl/NSSSIP2023/src/computer_pkg/msg/BoundingBoxes.msg" NAME_WE)
-add_dependencies(computer_pkg_generate_messages_cpp _computer_pkg_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/arl/NSSSIP2023/src/computer_pkg/srv/PlaceSensor.srv" NAME_WE)
 add_dependencies(computer_pkg_generate_messages_cpp _computer_pkg_generate_messages_check_deps_${_filename})
 
@@ -104,18 +78,6 @@ _generate_msg_eus(computer_pkg
   "/home/arl/NSSSIP2023/src/computer_pkg/msg/AiDetection.msg"
   "${MSG_I_FLAGS}"
   ""
-  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/computer_pkg
-)
-_generate_msg_eus(computer_pkg
-  "/home/arl/NSSSIP2023/src/computer_pkg/msg/BoundingBox.msg"
-  "${MSG_I_FLAGS}"
-  ""
-  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/computer_pkg
-)
-_generate_msg_eus(computer_pkg
-  "/home/arl/NSSSIP2023/src/computer_pkg/msg/BoundingBoxes.msg"
-  "${MSG_I_FLAGS}"
-  "/home/arl/NSSSIP2023/src/computer_pkg/msg/BoundingBox.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/computer_pkg
 )
 
@@ -141,10 +103,6 @@ add_dependencies(computer_pkg_generate_messages computer_pkg_generate_messages_e
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/arl/NSSSIP2023/src/computer_pkg/msg/AiDetection.msg" NAME_WE)
 add_dependencies(computer_pkg_generate_messages_eus _computer_pkg_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/arl/NSSSIP2023/src/computer_pkg/msg/BoundingBox.msg" NAME_WE)
-add_dependencies(computer_pkg_generate_messages_eus _computer_pkg_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/arl/NSSSIP2023/src/computer_pkg/msg/BoundingBoxes.msg" NAME_WE)
-add_dependencies(computer_pkg_generate_messages_eus _computer_pkg_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/arl/NSSSIP2023/src/computer_pkg/srv/PlaceSensor.srv" NAME_WE)
 add_dependencies(computer_pkg_generate_messages_eus _computer_pkg_generate_messages_check_deps_${_filename})
 
@@ -161,18 +119,6 @@ _generate_msg_lisp(computer_pkg
   "/home/arl/NSSSIP2023/src/computer_pkg/msg/AiDetection.msg"
   "${MSG_I_FLAGS}"
   ""
-  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/computer_pkg
-)
-_generate_msg_lisp(computer_pkg
-  "/home/arl/NSSSIP2023/src/computer_pkg/msg/BoundingBox.msg"
-  "${MSG_I_FLAGS}"
-  ""
-  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/computer_pkg
-)
-_generate_msg_lisp(computer_pkg
-  "/home/arl/NSSSIP2023/src/computer_pkg/msg/BoundingBoxes.msg"
-  "${MSG_I_FLAGS}"
-  "/home/arl/NSSSIP2023/src/computer_pkg/msg/BoundingBox.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/computer_pkg
 )
 
@@ -198,10 +144,6 @@ add_dependencies(computer_pkg_generate_messages computer_pkg_generate_messages_l
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/arl/NSSSIP2023/src/computer_pkg/msg/AiDetection.msg" NAME_WE)
 add_dependencies(computer_pkg_generate_messages_lisp _computer_pkg_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/arl/NSSSIP2023/src/computer_pkg/msg/BoundingBox.msg" NAME_WE)
-add_dependencies(computer_pkg_generate_messages_lisp _computer_pkg_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/arl/NSSSIP2023/src/computer_pkg/msg/BoundingBoxes.msg" NAME_WE)
-add_dependencies(computer_pkg_generate_messages_lisp _computer_pkg_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/arl/NSSSIP2023/src/computer_pkg/srv/PlaceSensor.srv" NAME_WE)
 add_dependencies(computer_pkg_generate_messages_lisp _computer_pkg_generate_messages_check_deps_${_filename})
 
@@ -218,18 +160,6 @@ _generate_msg_nodejs(computer_pkg
   "/home/arl/NSSSIP2023/src/computer_pkg/msg/AiDetection.msg"
   "${MSG_I_FLAGS}"
   ""
-  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/computer_pkg
-)
-_generate_msg_nodejs(computer_pkg
-  "/home/arl/NSSSIP2023/src/computer_pkg/msg/BoundingBox.msg"
-  "${MSG_I_FLAGS}"
-  ""
-  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/computer_pkg
-)
-_generate_msg_nodejs(computer_pkg
-  "/home/arl/NSSSIP2023/src/computer_pkg/msg/BoundingBoxes.msg"
-  "${MSG_I_FLAGS}"
-  "/home/arl/NSSSIP2023/src/computer_pkg/msg/BoundingBox.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/computer_pkg
 )
 
@@ -255,10 +185,6 @@ add_dependencies(computer_pkg_generate_messages computer_pkg_generate_messages_n
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/arl/NSSSIP2023/src/computer_pkg/msg/AiDetection.msg" NAME_WE)
 add_dependencies(computer_pkg_generate_messages_nodejs _computer_pkg_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/arl/NSSSIP2023/src/computer_pkg/msg/BoundingBox.msg" NAME_WE)
-add_dependencies(computer_pkg_generate_messages_nodejs _computer_pkg_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/arl/NSSSIP2023/src/computer_pkg/msg/BoundingBoxes.msg" NAME_WE)
-add_dependencies(computer_pkg_generate_messages_nodejs _computer_pkg_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/arl/NSSSIP2023/src/computer_pkg/srv/PlaceSensor.srv" NAME_WE)
 add_dependencies(computer_pkg_generate_messages_nodejs _computer_pkg_generate_messages_check_deps_${_filename})
 
@@ -275,18 +201,6 @@ _generate_msg_py(computer_pkg
   "/home/arl/NSSSIP2023/src/computer_pkg/msg/AiDetection.msg"
   "${MSG_I_FLAGS}"
   ""
-  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/computer_pkg
-)
-_generate_msg_py(computer_pkg
-  "/home/arl/NSSSIP2023/src/computer_pkg/msg/BoundingBox.msg"
-  "${MSG_I_FLAGS}"
-  ""
-  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/computer_pkg
-)
-_generate_msg_py(computer_pkg
-  "/home/arl/NSSSIP2023/src/computer_pkg/msg/BoundingBoxes.msg"
-  "${MSG_I_FLAGS}"
-  "/home/arl/NSSSIP2023/src/computer_pkg/msg/BoundingBox.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/computer_pkg
 )
 
@@ -311,10 +225,6 @@ add_dependencies(computer_pkg_generate_messages computer_pkg_generate_messages_p
 
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/arl/NSSSIP2023/src/computer_pkg/msg/AiDetection.msg" NAME_WE)
-add_dependencies(computer_pkg_generate_messages_py _computer_pkg_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/arl/NSSSIP2023/src/computer_pkg/msg/BoundingBox.msg" NAME_WE)
-add_dependencies(computer_pkg_generate_messages_py _computer_pkg_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/arl/NSSSIP2023/src/computer_pkg/msg/BoundingBoxes.msg" NAME_WE)
 add_dependencies(computer_pkg_generate_messages_py _computer_pkg_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/arl/NSSSIP2023/src/computer_pkg/srv/PlaceSensor.srv" NAME_WE)
 add_dependencies(computer_pkg_generate_messages_py _computer_pkg_generate_messages_check_deps_${_filename})
