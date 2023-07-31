@@ -23,8 +23,8 @@
 		</node>
 	</group>
  
- 	<arg name="weights" default="/home/arl/yolov5/Weights/sensor_detectv1.pt"/>
-	<arg name="data" default="$(find yolov5_ros)/src/yolov5/data/sensor_detect.yaml"/>
+ 	<arg name="weights" default="$(find computer_pkg)/yolo_models/Weights/sensor_detectv3.pt"/>
+	<arg name="data" default="$(find computer_pkg)/yolo_models/sensor_detect.yaml"/>
 	<arg name="input_topic" default="/hires"/>
 
 	<include file="$(find yolov5_ros)/launch/yolov5.launch">
