@@ -5,6 +5,7 @@
 <arg name="bag_prefix" default="20211012_noflying_orientation_test"/>
 <arg name="mavros_run"          default="true"/>
 <arg name="veh_name" default="VOXL1"/>
+<param name="PID_control" type="int" value="0"/>
 
 
 	<!-- vim: set ft=xml noet : -->
@@ -34,6 +35,9 @@
         <!-- Drone Packages -->
 
         <node pkg="drone_pkg" type="drone_offboard" name="drone_offboard_node" output="screen">
+        </node>
+        
+        <node pkg="drone_pkg" type="PID_controller" name="PID_control_node" output="screen">
         </node>
         
         <node if="$(arg launch_servo_control)" pkg="drone_pkg" type="servo_control.py" name="servo_control_node" output="screen">
