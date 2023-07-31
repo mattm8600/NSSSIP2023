@@ -25,6 +25,7 @@ ROOT = Path(os.path.relpath(ROOT, Path.cwd()))  # relative path
 
 print(sys.path)
 print(ROOT)
+print(Hello)
 
 # import from yolov5 submodules
 from models.common import DetectMultiBackend
