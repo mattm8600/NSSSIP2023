@@ -1,10 +1,10 @@
 
 "use strict";
 
-let PlaceSensor = require('./PlaceSensor.js')
 let DroneOp = require('./DroneOp.js')
+let PlaceSensor = require('./PlaceSensor.js')
 
 module.exports = {
-  PlaceSensor: PlaceSensor,
   DroneOp: DroneOp,
+  PlaceSensor: PlaceSensor,
 };

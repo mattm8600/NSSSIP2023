@@ -1,7 +1,7 @@
 <launch>
 
 
-	<arg name="fcu_url" default="udp://127.0.0.1:14540@:14540" />
+	<arg name="fcu_url" default="udp://127.0.0.1:14551@:14551" />
 	<arg name="gcs_url" default="" /> <!-- This is computer IP -->
 	<arg name="tgt_system" default="1" />
 	<arg name="tgt_component" default="1" />
@@ -22,12 +22,12 @@
 		<arg name="respawn_mavros" default="$(arg respawn_mavros)" />
 	</include>
 
-		<node pkg="offboard_testing" type="go_to_point_node" name="go_to_point_node" output="screen">
+		<node pkg="computer_pkg" type="go_to_point_node" name="go_to_point_node" output="screen">
 			<param name="x_coord" value="0.0" />
 			<param name="y_coord" value="0.0" />
 			<param name="z_coord" value="2.0" />
 		</node>
-		<node pkg="offboard_testing" type="go_to_point_gui.py" name="go_to_point_gui" output="screen"/>
+		<node pkg="computer_pkg" type="go_to_point_gui.py" name="go_to_point_gui" output="screen"/>
 		
 </launch>
 <!-- This is the FCU port number for real drone: 14551 -->

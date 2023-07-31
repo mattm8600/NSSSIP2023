@@ -5,10 +5,10 @@ project(drone_pkg)
 
 ## Find catkin and any catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  mavros_msgs
-  sensor_msgs
   roscpp
   rospy
+  mavros_msgs
+  sensor_msgs
   std_msgs
   geographic_msgs
   geometry_msgs
@@ -73,13 +73,14 @@ endif ()
 
 ## Declare a catkin package
 catkin_package(
-DEPENDS Eigen roscpp  
-CATKIN_DEPENDS 
-  message_runtime
-  roscpp
-  sensor_msgs
-  std_msgs
-  geometry_msgs
+  DEPENDS Eigen roscpp
+  INCLUDE_DIRS ${catkin_INCLUDE_DIRS} 
+  CATKIN_DEPENDS 
+    message_runtime
+    roscpp
+    sensor_msgs
+    std_msgs
+    geometry_msgs
 )
 
 include_directories(include
@@ -91,3 +92,4 @@ include_directories(include
 add_executable(drone_offboard src/drone_offboard.cpp)
 add_executable(PID_controller src/PID_controller.cpp)
 target_link_libraries(drone_offboard ${catkin_LIBRARIES})
+target_link_libraries(PID_controller ${catkin_LIBRARIES})

@@ -33,7 +33,7 @@
 
         <!-- Offboard Package -->
 
-        <node pkg="offboard_testing" type="circular_flight" name="circular_flight" output="screen">
+        <node pkg="computer_pkg" type="circular_flight" name="circular_flight" output="screen">
         </node>
 
         <!-- Save Data -->

@@ -9,7 +9,7 @@
 geometry_msgs::PoseStamped bb_vector;
 geometry_msgs::PoseStamped current_pose;
 int getting_pose = 0;
-offboard_testing::AiDetection tflite_data;
+computer_pkg::AiDetection tflite_data;
 int getting_tflite = 0;
 int detected_flag = 0;
 
@@ -32,7 +32,7 @@ void pose_callback(const geometry_msgs::PoseStamped::ConstPtr& msg) {
     getting_pose = 1;
 }
 
-void tflite_callback(const offboard_testing::AiDetection::ConstPtr& msg) {
+void tflite_callback(const computer_pkg::AiDetection::ConstPtr& msg) {
     tflite_data = *msg;
     getting_tflite = 1;
     if(tflite_data.class_confidence > 0) {
@@ -55,7 +55,7 @@ ros::init(argc, argv, "camera_conversion_node");
 ros::NodeHandle nh;
 ros::Publisher vector_pub = nh.advertise<geometry_msgs::PoseStamped>("bb_camera_vector", 100);
 ros::Subscriber pose_sub = nh.subscribe<geometry_msgs::PoseStamped>("mavros/local_position/pose", 100, pose_callback);
-ros::Subscriber tflite_sub = nh.subscribe<offboard_testing::AiDetection>("tflite_data", 100, tflite_callback);
+ros::Subscriber tflite_sub = nh.subscribe<computer_pkg::AiDetection>("tflite_data", 100, tflite_callback);
 ros::Rate loop_rate(10.0);
 assert(nh.getParam("/detect/confidence_threshold", threshold));
 
