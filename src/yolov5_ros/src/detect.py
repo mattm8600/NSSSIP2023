@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+# We modified this detect.py code from MAT robotics
 import rospy
 import cv2
 import torch
@@ -9,12 +10,10 @@ from cv_bridge import CvBridge
 from pathlib import Path
 import os
 import sys
+from offboard_testing.msg import AiDetection
 from rostopic import get_topic_type
-
 from sensor_msgs.msg import Image, CompressedImage
 from detection_msgs.msg import BoundingBox, BoundingBoxes
-
-sys.path.insert(0, './yolov5')
 
 # add yolov5 submodule to path
 FILE = Path(__file__).resolve()
@@ -22,10 +21,6 @@ ROOT = FILE.parents[0] / "yolov5"
 if str(ROOT) not in sys.path:
     sys.path.append(str(ROOT))  # add ROOT to PATH
 ROOT = Path(os.path.relpath(ROOT, Path.cwd()))  # relative path
-
-print(sys.path)
-print(ROOT)
-print(Hello)
 
 # import from yolov5 submodules
 from models.common import DetectMultiBackend
@@ -96,6 +91,11 @@ class Yolov5Detector:
         self.pred_pub = rospy.Publisher(
             rospy.get_param("~output_topic"), BoundingBoxes, queue_size=10
         )
+
+
+        self.ai_msg_pub = rospy.Publisher(
+            "/tflite_data", AiDetection, queue_size=10
+        )
         # Initialize image publisher
         self.publish_image = rospy.get_param("~publish_image")
         if self.publish_image:
@@ -136,6 +136,10 @@ class Yolov5Detector:
         # Process predictions 
         det = pred[0].cpu().numpy()
 
+        ai_detection_msg = AiDetection()
+        ai_detection_msg.timestamp_ns = now = rospy.get_rostime().nsecs
+        ai_detection_msg.class_confidence = 0.0
+
         bounding_boxes = BoundingBoxes()
         bounding_boxes.header = data.header
         bounding_boxes.image_header = data.header
@@ -150,6 +154,19 @@ class Yolov5Detector:
                 bounding_box = BoundingBox()
                 c = int(cls)
                 # Fill in bounding box message
+                
+                ai_detection_msg.class_id = 0
+                ai_detection_msg.class_name = self.names[c]
+                
+                if(conf > ai_detection_msg.class_confidence):
+                    ai_detection_msg.class_confidence = conf
+                    ai_detection_msg.detection_confidence = 1.0 
+                    ai_detection_msg.x_min = int(xyxy[0])
+                    ai_detection_msg.y_min = int(xyxy[1])
+                    ai_detection_msg.x_max = int(xyxy[2])
+                    ai_detection_msg.y_max = int(xyxy[3])
+                
+
                 bounding_box.Class = self.names[c]
                 bounding_box.probability = conf 
                 bounding_box.xmin = int(xyxy[0])
@@ -173,6 +190,7 @@ class Yolov5Detector:
 
         # Publish prediction
         self.pred_pub.publish(bounding_boxes)
+        self.ai_msg_pub.publish(ai_detection_msg)
 
         # Publish & visualize images
         if self.view_image:
