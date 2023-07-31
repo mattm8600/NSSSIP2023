@@ -5,6 +5,8 @@
  * 
  * from https://docs.px4.io/master/en/ros/mavros_offboard.html
  */
+#include <iostream>
+using namespace std;
 
 #include <ros/ros.h>
 #include <geometry_msgs/PoseStamped.h>
@@ -26,6 +28,7 @@ mavros_msgs::PositionTarget pose_vel;
 geometry_msgs::PoseStamped at_in_data;
 geometry_msgs::PoseStamped lpp_data;
 
+int control_mode;
 bool lpp_data_in = 0;
 bool at_in = 0;
 bool all_in = 0;
@@ -395,54 +398,10 @@ int main(int argc, char **argv)
         body_stab_pub_data.pose.position.z = body_diff(2);
         target_body_stab_pub.publish(body_stab_pub_data);
 
-        // if (count < 100){
-        //     pose_vel.velocity.x = 0.2;
-        //     pose_vel.velocity.y = 0.0;
-        // }else if(count < 200){
-        //     pose_vel.velocity.x = 0.0;
-        //     pose_vel.velocity.y = 0.2;
-        // }else if(count < 300){
-        //     pose_vel.velocity.x = -0.2;
-        //     pose_vel.velocity.y = 0.0;
-        // }else if(count < 400){
-        //     pose_vel.velocity.x = 0.0;
-        //     pose_vel.velocity.y = -0.2;
-        // }else{
-        //     count  = 0;
-        // }
-        // ROS_INFO("Counter is %d", count);
-        // ROS_INFO("X Velocity is %f", pose_vel.velocity.x);
-        // ROS_INFO("Y Velocity is %f", pose_vel.velocity.y);
-
-        // if(joy_in.buttons[0]==0 && last_button_val==0){
-        // last_button_val = 0;
-        // count = 0;
-        // sinusoid_val = 0;
-        // }
-        // else if(joy_in.buttons[0]==1 && last_button_val==0){            
-        // last_button_val = 1;
-        // count = 0;
-        // sinusoid_val = 0;
-        // }
-        // else if(joy_in.buttons[0]==0 && last_button_val==1){
-        // last_button_val = 0;
-        // sinusoid_val = 0;
-        // count = 0;
-        // }
-        // else if(joy_in.buttons[0]==1 && last_button_val==1){
-        // last_button_val = 1;
-        // phase = ((float)count/10);
-        // sinusoid_val = 1.5*sin(phase);
-        // }
-    
-        // pose_vel.header.stamp = ros::Time::now();
-        // pose_vel.yaw_rate = (double)joy_in.axes[0];
-        // pose_vel.velocity.x = (double)joy_in.axes[4];
-        // pose_vel.velocity.y = (double)joy_in.axes[3]+sinusoid_val; 
-        // pose_vel.velocity.z = (double)joy_in.axes[1];
-
-        local_pos_pub_mavros.publish(pose_vel);
-
+        nh.getParam("/PID_control", control_mode);
+        if(control_mode == 1){
+            local_pos_pub_mavros.publish(pose_vel);
+        }
         
         ros::spinOnce();
         rate.sleep();

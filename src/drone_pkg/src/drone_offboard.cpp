@@ -9,6 +9,9 @@ using namespace std;
 #include "sensor_msgs/BatteryState.h"
 #include "sensor_msgs/NavSatFix.h"
 #include "mavros_msgs/PositionTarget.h"
+#include "mavros_msgs/CommandBool.h"
+#include "mavros_msgs/SetMode.h"
+#include "computer_pkg/AiDetection.h"
 #include "drone_pkg/PlaceSensor.h"
 #include "drone_pkg/DroneOp.h"
 
@@ -24,13 +27,19 @@ double alt;
 
 float bat;
 
+int control_mode;
 bool waiting_for_op = true;
 bool placing_sensor = false;
 bool retrieving_sensor = false;
+int getting_tflite = 0;
+int detected_flag = 0;
 
 vector<double> sensor_pos[2];
 std_msgs::Int32 servo_state;
 mavros_msgs::PositionTarget target_pose;
+mavros_msgs::SetMode return_set_mode;
+mavros_msgs::CommandBool arm_cmd;
+computer_pkg::AiDetection tflite_data;
 
 void local_pos_cb(geometry_msgs::PoseStamped local_pos){
     x = local_pos.pose.position.x;
@@ -46,6 +55,17 @@ void global_pos_cb(sensor_msgs::NavSatFix global_pos){
 
 void bat_cb(sensor_msgs::BatteryState battery){
     bat = battery.percentage;
+}
+
+void tflite_callback(const computer_pkg::AiDetection::ConstPtr& msg) {
+    tflite_data = *msg;
+    getting_tflite = 1;
+    if(tflite_data.class_confidence > 0) {
+        detected_flag = 1;
+    }
+    else {
+        detected_flag = 0;
+    }
 }
 
 bool start_drone_op(drone_pkg::DroneOp::Request  &req, 
@@ -111,7 +131,7 @@ void set_global2local_target(double lat1, double lon1, double lat2, double lon2)
 
 void fly_to_target(ros::Publisher pos_pub_mavros, ros::Rate loop_rate){
     //raise to cruising height
-    target_pose.position.z = 5.0;
+    target_pose.position.z = 3.0;
     for(int i = 60; ros::ok() && i > 0; --i){
         pos_pub_mavros.publish(target_pose);
         loop_rate.sleep();
@@ -144,16 +164,21 @@ int main(int argc, char **argv){
     target_pose.type_mask = target_pose.IGNORE_VX | target_pose.IGNORE_VY | target_pose.IGNORE_VZ | target_pose.IGNORE_AFZ | target_pose.IGNORE_AFY | target_pose.IGNORE_AFX;
     target_pose.coordinate_frame = 1;
     target_pose.yaw = 3.141592/2;
+    return_set_mode.request.custom_mode = "AUTO.RTL";
+    arm_cmd.request.value = true;
     
     //create publishers and client
     ros::Publisher servo_pub = n.advertise<std_msgs::Int32>("servo_command",10);
     ros::Publisher local_pos_pub_mavros = n.advertise<mavros_msgs::PositionTarget>("mavros/setpoint_raw/local", 5);
     ros::ServiceClient placement_client = n.serviceClient<drone_pkg::PlaceSensor>("find_spot");
-
+    ros::ServiceClient set_mode_client = n.serviceClient<mavros_msgs::SetMode>("mavros/set_mode");
+    ros::ServiceClient arming_client = n.serviceClient<mavros_msgs::CommandBool>("mavros/cmd/arming");
+    
     //create subscrivers and service
     ros::Subscriber local_pos_sub = n.subscribe("mavros/local_position/pose", 10, local_pos_cb);
     ros::Subscriber global_pos_sub = n.subscribe("mavros/global_position/global", 10, global_pos_cb);
     ros::Subscriber bat_sub = n.subscribe("mavros_msgs/battery", 10, bat_cb);
+    ros::Subscriber tflite_sub = n.subscribe<computer_pkg::AiDetection>("tflite_data", 100, tflite_callback);
     ros::ServiceServer drone_op_server = n.advertiseService("start_drone_op", start_drone_op);
 
     cout << fixed << setprecision(7);
@@ -164,6 +189,11 @@ int main(int argc, char **argv){
 
     while (ros::ok()){
         if(placing_sensor){
+            if(arming_client.call(arm_cmd) &&
+                arm_cmd.response.success){
+                ROS_INFO("Vehicle armed");
+            }
+            
             drone_pkg::PlaceSensor drone_state;
             ros::spinOnce();
             drone_state.request.latitude = lat;
@@ -208,12 +238,11 @@ int main(int argc, char **argv){
                     cout << endl;
                 }
 
-                //return home
-                target_xy[0] = 0;
-                target_xy[1] = 0;
-                fly_to_target(local_pos_pub_mavros, loop_rate);
-
-                //land
+                //return mode
+                if( set_mode_client.call(return_set_mode) &&
+                    return_set_mode.response.mode_sent){
+                    cout << "returing to home position" << endl;
+                }
 
                 //reset
                 placing_sensor = false;
@@ -225,6 +254,11 @@ int main(int argc, char **argv){
             }
         }
         if(retrieving_sensor){
+            if(arming_client.call(arm_cmd) &&
+                arm_cmd.response.success){
+                ROS_INFO("Vehicle armed");
+            }
+            
             double target_dist;
             
             ros::spinOnce();
@@ -258,18 +292,33 @@ int main(int argc, char **argv){
             //fly to target locations
             fly_to_target(local_pos_pub_mavros, loop_rate);
 
-            //precision land
+            //wait for sensor to be detected
+            ros::spinOnce();
+            while(detected_flag != 1 && ros::ok()){
+                //hover while waiting
+                cout << "Cannot see sensor box" << endl;
+                local_pos_pub_mavros.publish(target_pose);
+                loop_rate.sleep();
+                ros::spinOnce();
+            }
+
+            //give control to PID controller
+            n.setParam("/PID_control", 1);
+            n.getParam("/PID_control",control_mode);
+            while(control_mode!=0 && ros::ok()){
+                //wait for PID_controller to relinquish control
+                n.getParam("/PID_control",control_mode);
+            }
 
             //pickup sensor
             servo_state.data = 1;
             servo_pub.publish(servo_state);
                 
-            //return home
-            target_xy[0] = 0;
-            target_xy[1] = 0;
-            fly_to_target(local_pos_pub_mavros, loop_rate);
-
-            //land
+            //return mode
+            if( set_mode_client.call(return_set_mode) &&
+                return_set_mode.response.mode_sent){
+                cout << "returing to home position" << endl;
+            }
 
             //release sensor
             servo_state.data = 0;
