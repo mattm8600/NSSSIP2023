@@ -70,10 +70,10 @@ def sensor_placement_server(req):
         tar_lon = target_latlon[1]
 
     #generate and return response
-        target_pos = PlaceSensorResponse()
-        target_pos.target_latitude = tar_lat
-        target_pos.target_longitude = tar_lon
-        return target_pos
+    target_pos = PlaceSensorResponse()
+    target_pos.target_latitude = tar_lat
+    target_pos.target_longitude = tar_lon
+    return target_pos
 
 def find_sensor_placement(target_lat, target_lon):
     # Opens image

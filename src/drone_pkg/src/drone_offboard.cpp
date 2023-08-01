@@ -38,7 +38,6 @@ bool retrieving_sensor = false;
 int getting_tflite = 0;
 int detected_flag = 0;
 bool hasSensorBox = false;
-bool test = true;
 
 vector<double> sensor_pos[2];
 std_msgs::Int32 servo_state;
@@ -98,7 +97,9 @@ void servo_cb(std_msgs::Int32 response){
     if(response.data == 1){
         hasSensorBox = true;
     }
-    hasSensorBox = false;
+    else{
+        hasSensorBox = false;
+    }
 }
 
 bool start_drone_op(drone_pkg::DroneOp::Request  &req, 
@@ -351,12 +352,12 @@ void retrieve_sensor(ros::Rate loop_rate){
         //raise height
         target_pose.position.z = 3.0;
         for(int i = 60; ros::ok() && i > 0; --i){
+            cout << "raising height" << endl;
             local_pos_pub_mavros.publish(target_pose);
             loop_rate.sleep();
         }
-        
-        //updates callbacks (to see if hasSensorBox)
-        ros::spinOnce();
+
+        ros::spinOnce(); 
     }
 
     //return home and land
