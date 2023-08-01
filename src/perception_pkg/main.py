@@ -105,8 +105,10 @@ with rasterio.open('Updated_Texas_Final.tif') as src:
     # Does the transformation & assigns the result to transformation
     transformation = np.dot(coordinate_matrix, transform_matrix.T)
 
+    # Opens up the dem image
     with rasterio.open('dem_example.tif') as dem:
 
+        # Retrieves the transformation matrix
         dem_transform = dem.transform
 
         # Represents transf. matrix of DEM
@@ -114,6 +116,7 @@ with rasterio.open('Updated_Texas_Final.tif') as src:
                                [dem_transform.d, dem_transform.e, dem_transform.f],
                                [0, 0, 1]])
         
+        # Determines the inverse of the matrix 
         dem_matrix_inv = np.linalg.inv(dem_matrix)
 
         pixel_transformation = np.dot(transformation, dem_matrix_inv.T)
@@ -122,11 +125,6 @@ with rasterio.open('Updated_Texas_Final.tif') as src:
         x = pixel_transformation[:,0]
         y = pixel_transformation[:,1]
         test = cv2.imread('dem_example.png')
-        plt.imshow(cv2.cvtColor(test, cv2.COLOR_BGR2RGB))
-
-        plt.plot(x,y,'ro', markersize=0.01)
-
-        plt.show()
 
         dem_dataset = gdal.Open('dem_example.tif')
 
@@ -148,27 +146,25 @@ with rasterio.open('Updated_Texas_Final.tif') as src:
 
         max_elevation = np.nanmax(valid_data)
 
-        plt.imshow(valid_data, cmap='terrain')
-        plt.colorbar()
-        plt.show()
-
         img = gdal.Open("dem_example.tif")
 
+        # Extracts the min. band
         band = img.GetRasterBand(1)
 
         image_array = band.ReadAsArray()
 
-        # Takes in the lat,long from drone
+        # Takes in the lat,long from drone -- hard coded for now
         latitude, longitude = 30.503877, -97.776747
 
+        # Converts the lat,long coords into pixel coordinates 
         x, y = convert_coordinates(latitude, longitude, src.crs, 4326)
 
         target_pixel = (x,y)
 
-        # Radius set to 10 pixels away from pixel of interest
+        # Radius set to 1 km away from the x,y 
         radius = 1 / 0.3174234500875771636 * 1000
 
-        # Bounding box coordinates
+        # Bounding box coordinates. Used to create a "circle"
         min_x = x - radius
         min_y = y - radius
         
@@ -177,33 +173,34 @@ with rasterio.open('Updated_Texas_Final.tif') as src:
 
         pixels_list = []
 
+        # Iterates through all of the pixels along the road
         for pixel in pixel_transformation:
             x,y = pixel
             
+            # Checks to see if the current pixel is within the bounding box
             if min_x <= x <= max_x and min_y <= y <= max_y:
                 
+                # Compures the distance 
                 distance = np.sqrt((x - target_pixel[0]) ** 2 + (y - target_pixel[1]) ** 2)
                 
+                # Checks to see if the current pixel is within the radius
                 if distance <= radius:
-                    #pixels_list.append(pixel) 
                     pixels_list.append((x,y))          
 
         x_new = [pixel[0] for pixel in pixels_list]
         y_new = [pixel[1] for pixel in pixels_list] 
 
+        # 
         near_pixels = np.column_stack((x_new,y_new))
 
         common_elements = np.concatenate((near_pixels, pixel_transformation), axis=0)
 
-        #common_elements = np.intersect1d(pixel_transformation, near_pixels)
-
-        #common_elements = np.array(common_elements)
-
         min_average_slope = float('inf')  
         flattest_pixel = None
 
-       # print(common_elements)
-
+        # O(n^2) - This part takes a long time, as it iterates through all of the pixels in
+        # common_elements and calculates the slope of the current pixel and the other_pixel. 
+        # This only considers the other_pixels that are only 100 pixels away from the current pixel
         for pixel in common_elements:
 
             if isinstance(pixel, np.float64):
@@ -229,102 +226,6 @@ with rasterio.open('Updated_Texas_Final.tif') as src:
                     min_average_slope = average_slope
                     flattest_pixel = pixel
 
+        # Final output
         print("Flattext pixel:", flattest_pixel)
 
-        plt.scatter(x_new,y_new,c='red',marker='o')
-
-        plt.xlabel('X Coordinates')
-        plt.ylabel('Y Coordinates')
-        plt.title('Pixels within Radius')
-
-        plt.show()
-
-        test = cv2.imread('dem_example.png')
-        plt.imshow(cv2.cvtColor(test, cv2.COLOR_BGR2RGB))
-        plt.plot(x_new,y_new,'ro', markersize=1)
-
-        plt.show() 
-
-        img = gdal.Open("dem_example.tif")
-        dataset = img
-        # Step 2: Extract the elevation data as a NumPy array
-        elevation_matrix = dataset.ReadAsArray()
-        
-        if elevation_matrix.ndim > 2:
-            elevation_matrix = np.mean(elevation_matrix, axis=0)
-
-        # Step 3: Compute the gradient using numpy
-        slope_x, slope_y = np.gradient(elevation_matrix)
-
-        nonzero_x = slope_x[np.nonzero(slope_x)]
-        nonzero_y = slope_y[np.nonzero(slope_y)]
-
-        slope_magnitude = np.sqrt(slope_x ** 2 + slope_y ** 2)
-
-        gradient_threshold = 10
-
-        binary_matrix = np.where(slope_magnitude <= gradient_threshold, 1, 0)
-
-        print(binary_matrix)
-
-        band = img.GetRasterBand(1)
-
-        image_array = band.ReadAsArray()
-
-        elevation_data = image_array
-
-        # Extract elevation value for the target pixel
-        target_elevation = elevation_data[int(y), int(x)]
-
-        # Extract elevation values for the nearby pixels
-        nearby_elevations = elevation_data[np.array(near_pixels)[:, 1].astype(int), np.array(near_pixels)[:, 0].astype(int)]
-
-        slope_x = np.gradient(nearby_elevations, axis=0)
-
-        # Calculates all of the relevant stats.
-        # mean_elevation = np.mean(nearby_elevations)
-        # min_elevation = np.min(nearby_elevations)
-        # max_elevation = np.max(nearby_elevations)
-        # std_elevation = np.std(nearby_elevations)
-
-        # slopes = []
-        
-        # for pixel in near_pixels:
-        #     elevation_neighbor = elevation_data[int(pixel[1]), int(pixel[0])]
-        #     distance = np.sqrt((pixel[0] - target_pixel[0]) ** 2 + (pixel[1] - target_pixel[1]) ** 2)
-        #     slope = (elevation_neighbor - target_elevation) / distance#change from target_elevation to neighbor of neighbor
-        #     slopes.append(slope)
-
-        # Determines the coordinates of the pixel with the smallest slope
-        # flattest_pixel = near_pixels[np.argmin(slope)]
-
-        # print("Terrain Analysis Results")
-        # print("Mean Elevation", mean_elevation)
-        # print("Min Elevation", min_elevation)
-        # print("Max Elevation", max_elevation)
-        # print("Std. Elevation", std_elevation)
-        # print("Flattest Pixel Coordinates", flattest_pixel)
-
-        # plt.imshow(image_array)
-        # plt.colorbar()
-        # plt.plot(x,y,'ro',markersize=2, label='Selected Pixel')
-        # plt.show()
-
-        # x = flattest_pixel[0]
-        # y = flattest_pixel[1]
-  
-        # target_lat = x*dem_matrix
-        # target_long = y*dem_matrix
-
-        # plt.imshow(image_array)
-        # plt.colorbar()
-        # plt.plot(x,y,'ro',markersize=5, label='Selected Pixel')
-        # plt.show()
-
-        # (pixel_x, pixel_y) = pixel_transformation[1]
-
-        # band_index = 1
-
-        # band = dem_dataset.GetRasterBand(band_index)
-
-        # pixel_value = band.ReadAsArray(pixel_y, pixel_x, 1, 1)[0, 0]
