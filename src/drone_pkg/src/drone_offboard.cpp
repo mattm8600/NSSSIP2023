@@ -298,7 +298,6 @@ void place_sensor(ros::Rate loop_rate){
         //print sensor positions
         print_sensor_pos();
 
-
         //return to home and land
         fly_home(loop_rate);
 

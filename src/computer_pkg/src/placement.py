@@ -9,8 +9,8 @@ def find_sensor_placement(req):
     bat = req.battery
 
     #result of spot search
-    tar_lat = lat0+0.0001 * (np.random.rand() - 0.5) * 2
-    tar_lon = lon0+0.0001 * (np.random.rand() - 0.5) * 2
+    tar_lat = lat0+0.0001 * (np.random.rand() - 0.5)
+    tar_lon = lon0+0.0001 * (np.random.rand() - 0.5)
 
     target_pos = PlaceSensorResponse()
     target_pos.target_latitude = tar_lat
