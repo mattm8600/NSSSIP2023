@@ -66,21 +66,14 @@ include computer_pkg/CMakeFiles/computer_pkg_generate_messages_nodejs.dir/compil
 # Include the progress variables for this target.
 include computer_pkg/CMakeFiles/computer_pkg_generate_messages_nodejs.dir/progress.make
 
-computer_pkg/CMakeFiles/computer_pkg_generate_messages_nodejs: /home/arl/NSSSIP2023/devel/share/gennodejs/ros/computer_pkg/msg/AiDetection.js
 computer_pkg/CMakeFiles/computer_pkg_generate_messages_nodejs: /home/arl/NSSSIP2023/devel/share/gennodejs/ros/computer_pkg/srv/PlaceSensor.js
-
-/home/arl/NSSSIP2023/devel/share/gennodejs/ros/computer_pkg/msg/AiDetection.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
-/home/arl/NSSSIP2023/devel/share/gennodejs/ros/computer_pkg/msg/AiDetection.js: /home/arl/NSSSIP2023/src/computer_pkg/msg/AiDetection.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/arl/NSSSIP2023/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from computer_pkg/AiDetection.msg"
-	cd /home/arl/NSSSIP2023/build/computer_pkg && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/arl/NSSSIP2023/src/computer_pkg/msg/AiDetection.msg -Icomputer_pkg:/home/arl/NSSSIP2023/src/computer_pkg/msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Imavros_msgs:/opt/ros/noetic/share/mavros_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p computer_pkg -o /home/arl/NSSSIP2023/devel/share/gennodejs/ros/computer_pkg/msg
 
 /home/arl/NSSSIP2023/devel/share/gennodejs/ros/computer_pkg/srv/PlaceSensor.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/arl/NSSSIP2023/devel/share/gennodejs/ros/computer_pkg/srv/PlaceSensor.js: /home/arl/NSSSIP2023/src/computer_pkg/srv/PlaceSensor.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/arl/NSSSIP2023/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Javascript code from computer_pkg/PlaceSensor.srv"
-	cd /home/arl/NSSSIP2023/build/computer_pkg && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/arl/NSSSIP2023/src/computer_pkg/srv/PlaceSensor.srv -Icomputer_pkg:/home/arl/NSSSIP2023/src/computer_pkg/msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Imavros_msgs:/opt/ros/noetic/share/mavros_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p computer_pkg -o /home/arl/NSSSIP2023/devel/share/gennodejs/ros/computer_pkg/srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/arl/NSSSIP2023/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from computer_pkg/PlaceSensor.srv"
+	cd /home/arl/NSSSIP2023/build/computer_pkg && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/arl/NSSSIP2023/src/computer_pkg/srv/PlaceSensor.srv -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Imavros_msgs:/opt/ros/noetic/share/mavros_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p computer_pkg -o /home/arl/NSSSIP2023/devel/share/gennodejs/ros/computer_pkg/srv
 
 computer_pkg_generate_messages_nodejs: computer_pkg/CMakeFiles/computer_pkg_generate_messages_nodejs
-computer_pkg_generate_messages_nodejs: /home/arl/NSSSIP2023/devel/share/gennodejs/ros/computer_pkg/msg/AiDetection.js
 computer_pkg_generate_messages_nodejs: /home/arl/NSSSIP2023/devel/share/gennodejs/ros/computer_pkg/srv/PlaceSensor.js
 computer_pkg_generate_messages_nodejs: computer_pkg/CMakeFiles/computer_pkg_generate_messages_nodejs.dir/build.make
 .PHONY : computer_pkg_generate_messages_nodejs

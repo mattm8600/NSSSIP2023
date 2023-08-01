@@ -172,20 +172,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-perception_pkg/CMakeFiles/_catkin_empty_exported_target.dir/rule:
-	cd /home/arl/NSSSIP2023/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 perception_pkg/CMakeFiles/_catkin_empty_exported_target.dir/rule
-.PHONY : perception_pkg/CMakeFiles/_catkin_empty_exported_target.dir/rule
-
-# Convenience name for target.
-_catkin_empty_exported_target: perception_pkg/CMakeFiles/_catkin_empty_exported_target.dir/rule
-.PHONY : _catkin_empty_exported_target
-
-# fast build rule for target.
-_catkin_empty_exported_target/fast:
-	cd /home/arl/NSSSIP2023/build && $(MAKE) $(MAKESILENT) -f perception_pkg/CMakeFiles/_catkin_empty_exported_target.dir/build.make perception_pkg/CMakeFiles/_catkin_empty_exported_target.dir/build
-.PHONY : _catkin_empty_exported_target/fast
-
-# Convenience name for target.
 perception_pkg/CMakeFiles/perception_pkg_generate_messages.dir/rule:
 	cd /home/arl/NSSSIP2023/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 perception_pkg/CMakeFiles/perception_pkg_generate_messages.dir/rule
 .PHONY : perception_pkg/CMakeFiles/perception_pkg_generate_messages.dir/rule
@@ -226,7 +212,6 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... _catkin_empty_exported_target"
 	@echo "... _perception_pkg_generate_messages_check_deps_PlaceSensor"
 	@echo "... perception_pkg_generate_messages"
 .PHONY : help

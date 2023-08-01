@@ -185,7 +185,7 @@ foreach(t ${computer_pkg_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "message_runtime;geographic_msgs;roscpp;rospy;sensor_msgs;std_msgs;Eigen")
+set(depends "message_runtime;roscpp;rospy;sensor_msgs;std_msgs;geographic_msgs;Eigen")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls

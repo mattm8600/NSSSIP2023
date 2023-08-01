@@ -413,6 +413,18 @@ catkin_DIR:PATH=/opt/ros/noetic/share/catkin/cmake
 cmake_modules_DIR:PATH=/opt/ros/noetic/share/cmake_modules/cmake
 
 //Value Computed by CMake
+computer_msgs_BINARY_DIR:STATIC=/home/arl/NSSSIP2023/build/computer_msgs
+
+//The directory containing a CMake configuration file for computer_msgs.
+computer_msgs_DIR:PATH=/home/arl/NSSSIP2023/devel/share/computer_msgs/cmake
+
+//Value Computed by CMake
+computer_msgs_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+computer_msgs_SOURCE_DIR:STATIC=/home/arl/NSSSIP2023/src/computer_msgs
+
+//Value Computed by CMake
 computer_pkg_BINARY_DIR:STATIC=/home/arl/NSSSIP2023/build/computer_pkg
 
 //Value Computed by CMake
@@ -733,7 +745,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=9
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=10
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

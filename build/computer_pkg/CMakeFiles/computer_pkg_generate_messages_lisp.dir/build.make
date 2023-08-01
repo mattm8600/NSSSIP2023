@@ -66,21 +66,14 @@ include computer_pkg/CMakeFiles/computer_pkg_generate_messages_lisp.dir/compiler
 # Include the progress variables for this target.
 include computer_pkg/CMakeFiles/computer_pkg_generate_messages_lisp.dir/progress.make
 
-computer_pkg/CMakeFiles/computer_pkg_generate_messages_lisp: /home/arl/NSSSIP2023/devel/share/common-lisp/ros/computer_pkg/msg/AiDetection.lisp
 computer_pkg/CMakeFiles/computer_pkg_generate_messages_lisp: /home/arl/NSSSIP2023/devel/share/common-lisp/ros/computer_pkg/srv/PlaceSensor.lisp
-
-/home/arl/NSSSIP2023/devel/share/common-lisp/ros/computer_pkg/msg/AiDetection.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
-/home/arl/NSSSIP2023/devel/share/common-lisp/ros/computer_pkg/msg/AiDetection.lisp: /home/arl/NSSSIP2023/src/computer_pkg/msg/AiDetection.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/arl/NSSSIP2023/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from computer_pkg/AiDetection.msg"
-	cd /home/arl/NSSSIP2023/build/computer_pkg && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/arl/NSSSIP2023/src/computer_pkg/msg/AiDetection.msg -Icomputer_pkg:/home/arl/NSSSIP2023/src/computer_pkg/msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Imavros_msgs:/opt/ros/noetic/share/mavros_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p computer_pkg -o /home/arl/NSSSIP2023/devel/share/common-lisp/ros/computer_pkg/msg
 
 /home/arl/NSSSIP2023/devel/share/common-lisp/ros/computer_pkg/srv/PlaceSensor.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
 /home/arl/NSSSIP2023/devel/share/common-lisp/ros/computer_pkg/srv/PlaceSensor.lisp: /home/arl/NSSSIP2023/src/computer_pkg/srv/PlaceSensor.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/arl/NSSSIP2023/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Lisp code from computer_pkg/PlaceSensor.srv"
-	cd /home/arl/NSSSIP2023/build/computer_pkg && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/arl/NSSSIP2023/src/computer_pkg/srv/PlaceSensor.srv -Icomputer_pkg:/home/arl/NSSSIP2023/src/computer_pkg/msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Imavros_msgs:/opt/ros/noetic/share/mavros_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p computer_pkg -o /home/arl/NSSSIP2023/devel/share/common-lisp/ros/computer_pkg/srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/arl/NSSSIP2023/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from computer_pkg/PlaceSensor.srv"
+	cd /home/arl/NSSSIP2023/build/computer_pkg && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/arl/NSSSIP2023/src/computer_pkg/srv/PlaceSensor.srv -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Imavros_msgs:/opt/ros/noetic/share/mavros_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p computer_pkg -o /home/arl/NSSSIP2023/devel/share/common-lisp/ros/computer_pkg/srv
 
 computer_pkg_generate_messages_lisp: computer_pkg/CMakeFiles/computer_pkg_generate_messages_lisp
-computer_pkg_generate_messages_lisp: /home/arl/NSSSIP2023/devel/share/common-lisp/ros/computer_pkg/msg/AiDetection.lisp
 computer_pkg_generate_messages_lisp: /home/arl/NSSSIP2023/devel/share/common-lisp/ros/computer_pkg/srv/PlaceSensor.lisp
 computer_pkg_generate_messages_lisp: computer_pkg/CMakeFiles/computer_pkg_generate_messages_lisp.dir/build.make
 .PHONY : computer_pkg_generate_messages_lisp

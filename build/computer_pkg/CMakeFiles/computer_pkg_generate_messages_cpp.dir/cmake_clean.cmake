@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "/home/arl/NSSSIP2023/devel/include/computer_pkg/AiDetection.h"
   "/home/arl/NSSSIP2023/devel/include/computer_pkg/PlaceSensor.h"
   "CMakeFiles/computer_pkg_generate_messages_cpp"
 )

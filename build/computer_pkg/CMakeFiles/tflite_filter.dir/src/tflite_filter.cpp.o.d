@@ -1104,5 +1104,5 @@ computer_pkg/CMakeFiles/tflite_filter.dir/src/tflite_filter.cpp.o: \
  /opt/ros/noetic/include/geometry_msgs/PoseStamped.h \
  /opt/ros/noetic/include/geometry_msgs/Pose.h \
  /opt/ros/noetic/include/geometry_msgs/Quaternion.h \
- /home/arl/NSSSIP2023/devel/include/computer_pkg/AiDetection.h \
+ /home/arl/NSSSIP2023/devel/include/computer_msgs/AiDetection.h \
  /opt/ros/noetic/include/std_msgs/String.h

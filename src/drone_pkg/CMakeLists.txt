@@ -12,6 +12,7 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   geographic_msgs
   geometry_msgs
+  computer_msgs
   message_generation
 )
 
@@ -25,8 +26,6 @@ list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 ## Generate messages in the 'msg' folder
 # add_message_files(
 #   FILES
-#   Message1.msg
-#   Message2.msg
 # )
 
 ## Generate services in the 'srv' folder
@@ -92,8 +91,7 @@ include_directories(include
 add_executable(drone_offboard src/drone_offboard.cpp)
 add_executable(PID_controller src/PID_controller.cpp)
 
-add_dependencies(drone_offboard computer_pkg_generate_messages_cpp)
-add_dependencies(tflite_filter drone_pkg_generate_messages_cpp)
+add_dependencies(drone_offboard computer_msgs_generate_messages_cpp)
 
 target_link_libraries(drone_offboard ${catkin_LIBRARIES})
 target_link_libraries(PID_controller ${catkin_LIBRARIES})

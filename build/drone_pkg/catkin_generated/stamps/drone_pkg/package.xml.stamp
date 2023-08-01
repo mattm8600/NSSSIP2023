@@ -38,6 +38,8 @@
   <exec_depend>sensor_msgs</exec_depend>
   <exec_depend>message_runtime</exec_depend>
 
+  <depend>computer_msgs</depend>
+  
   <export>
 
   </export>

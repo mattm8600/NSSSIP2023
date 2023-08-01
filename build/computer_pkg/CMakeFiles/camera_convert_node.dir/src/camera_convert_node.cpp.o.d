@@ -1104,7 +1104,7 @@ computer_pkg/CMakeFiles/camera_convert_node.dir/src/camera_convert_node.cpp.o: \
  /opt/ros/noetic/include/geometry_msgs/PoseStamped.h \
  /opt/ros/noetic/include/geometry_msgs/Pose.h \
  /opt/ros/noetic/include/geometry_msgs/Quaternion.h \
- /home/arl/NSSSIP2023/devel/include/computer_pkg/AiDetection.h \
+ /home/arl/NSSSIP2023/devel/include/computer_msgs/AiDetection.h \
  /opt/ros/noetic/include/std_msgs/String.h /usr/include/Eigen/Dense \
  /usr/include/Eigen/Core \
  /usr/include/Eigen/src/Core/util/DisableStupidWarnings.h \

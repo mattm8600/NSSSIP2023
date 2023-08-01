@@ -66,7 +66,6 @@ include computer_pkg/CMakeFiles/computer_pkg_generate_messages_eus.dir/compiler_
 # Include the progress variables for this target.
 include computer_pkg/CMakeFiles/computer_pkg_generate_messages_eus.dir/progress.make
 
-computer_pkg/CMakeFiles/computer_pkg_generate_messages_eus: /home/arl/NSSSIP2023/devel/share/roseus/ros/computer_pkg/msg/AiDetection.l
 computer_pkg/CMakeFiles/computer_pkg_generate_messages_eus: /home/arl/NSSSIP2023/devel/share/roseus/ros/computer_pkg/srv/PlaceSensor.l
 computer_pkg/CMakeFiles/computer_pkg_generate_messages_eus: /home/arl/NSSSIP2023/devel/share/roseus/ros/computer_pkg/manifest.l
 
@@ -74,19 +73,13 @@ computer_pkg/CMakeFiles/computer_pkg_generate_messages_eus: /home/arl/NSSSIP2023
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/arl/NSSSIP2023/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp manifest code for computer_pkg"
 	cd /home/arl/NSSSIP2023/build/computer_pkg && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/arl/NSSSIP2023/devel/share/roseus/ros/computer_pkg computer_pkg geographic_msgs mavros_msgs sensor_msgs std_msgs geometry_msgs
 
-/home/arl/NSSSIP2023/devel/share/roseus/ros/computer_pkg/msg/AiDetection.l: /opt/ros/noetic/lib/geneus/gen_eus.py
-/home/arl/NSSSIP2023/devel/share/roseus/ros/computer_pkg/msg/AiDetection.l: /home/arl/NSSSIP2023/src/computer_pkg/msg/AiDetection.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/arl/NSSSIP2023/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from computer_pkg/AiDetection.msg"
-	cd /home/arl/NSSSIP2023/build/computer_pkg && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/arl/NSSSIP2023/src/computer_pkg/msg/AiDetection.msg -Icomputer_pkg:/home/arl/NSSSIP2023/src/computer_pkg/msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Imavros_msgs:/opt/ros/noetic/share/mavros_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p computer_pkg -o /home/arl/NSSSIP2023/devel/share/roseus/ros/computer_pkg/msg
-
 /home/arl/NSSSIP2023/devel/share/roseus/ros/computer_pkg/srv/PlaceSensor.l: /opt/ros/noetic/lib/geneus/gen_eus.py
 /home/arl/NSSSIP2023/devel/share/roseus/ros/computer_pkg/srv/PlaceSensor.l: /home/arl/NSSSIP2023/src/computer_pkg/srv/PlaceSensor.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/arl/NSSSIP2023/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp code from computer_pkg/PlaceSensor.srv"
-	cd /home/arl/NSSSIP2023/build/computer_pkg && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/arl/NSSSIP2023/src/computer_pkg/srv/PlaceSensor.srv -Icomputer_pkg:/home/arl/NSSSIP2023/src/computer_pkg/msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Imavros_msgs:/opt/ros/noetic/share/mavros_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p computer_pkg -o /home/arl/NSSSIP2023/devel/share/roseus/ros/computer_pkg/srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/arl/NSSSIP2023/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from computer_pkg/PlaceSensor.srv"
+	cd /home/arl/NSSSIP2023/build/computer_pkg && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/arl/NSSSIP2023/src/computer_pkg/srv/PlaceSensor.srv -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Imavros_msgs:/opt/ros/noetic/share/mavros_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p computer_pkg -o /home/arl/NSSSIP2023/devel/share/roseus/ros/computer_pkg/srv
 
 computer_pkg_generate_messages_eus: computer_pkg/CMakeFiles/computer_pkg_generate_messages_eus
 computer_pkg_generate_messages_eus: /home/arl/NSSSIP2023/devel/share/roseus/ros/computer_pkg/manifest.l
-computer_pkg_generate_messages_eus: /home/arl/NSSSIP2023/devel/share/roseus/ros/computer_pkg/msg/AiDetection.l
 computer_pkg_generate_messages_eus: /home/arl/NSSSIP2023/devel/share/roseus/ros/computer_pkg/srv/PlaceSensor.l
 computer_pkg_generate_messages_eus: computer_pkg/CMakeFiles/computer_pkg_generate_messages_eus.dir/build.make
 .PHONY : computer_pkg_generate_messages_eus

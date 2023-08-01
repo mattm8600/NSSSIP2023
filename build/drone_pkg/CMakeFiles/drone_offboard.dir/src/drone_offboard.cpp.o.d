@@ -1111,7 +1111,7 @@ drone_pkg/CMakeFiles/drone_offboard.dir/src/drone_offboard.cpp.o: \
  /opt/ros/noetic/include/mavros_msgs/SetMode.h \
  /opt/ros/noetic/include/mavros_msgs/SetModeRequest.h \
  /opt/ros/noetic/include/mavros_msgs/SetModeResponse.h \
- /home/arl/NSSSIP2023/devel/include/computer_pkg/AiDetection.h \
+ /home/arl/NSSSIP2023/devel/include/computer_msgs/AiDetection.h \
  /home/arl/NSSSIP2023/devel/include/drone_pkg/PlaceSensor.h \
  /home/arl/NSSSIP2023/devel/include/drone_pkg/PlaceSensorRequest.h \
  /home/arl/NSSSIP2023/devel/include/drone_pkg/PlaceSensorResponse.h \

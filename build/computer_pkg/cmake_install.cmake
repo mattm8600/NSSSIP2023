@@ -43,10 +43,6 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/computer_pkg/msg" TYPE FILE FILES "/home/arl/NSSSIP2023/src/computer_pkg/msg/AiDetection.msg")
-endif()
-
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/computer_pkg/srv" TYPE FILE FILES "/home/arl/NSSSIP2023/src/computer_pkg/srv/PlaceSensor.srv")
 endif()
 

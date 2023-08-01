@@ -136,6 +136,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/arl/NSSSIP2023/build/gtest/cmake_install.cmake")
+  include("/home/arl/NSSSIP2023/build/computer_msgs/cmake_install.cmake")
   include("/home/arl/NSSSIP2023/build/detection_msgs/cmake_install.cmake")
   include("/home/arl/NSSSIP2023/build/perception_pkg/cmake_install.cmake")
   include("/home/arl/NSSSIP2023/build/computer_pkg/cmake_install.cmake")

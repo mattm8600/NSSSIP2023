@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "/home/arl/NSSSIP2023/devel/share/gennodejs/ros/computer_pkg/msg/AiDetection.js"
   "/home/arl/NSSSIP2023/devel/share/gennodejs/ros/computer_pkg/srv/PlaceSensor.js"
   "CMakeFiles/computer_pkg_generate_messages_nodejs"
 )
