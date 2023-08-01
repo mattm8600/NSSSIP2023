@@ -44,7 +44,6 @@ generate_messages(
 
 catkin_install_python(
   PROGRAMS 
-  src/placement.py
   scripts/go_to_point_gui.py
   scripts/sim_launch.sh
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
