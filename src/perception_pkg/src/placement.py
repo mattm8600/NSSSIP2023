@@ -9,7 +9,7 @@
 import cv2
 import rospy
 import numpy as np
-from computer_pkg.srv import PlaceSensor, PlaceSensorResponse
+from perception_pkg.srv import PlaceSensor, PlaceSensorResponse
 import matplotlib.pyplot as plt
 import rasterio
 from rasterio.warp import transform_geom
