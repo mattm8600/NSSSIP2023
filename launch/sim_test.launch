@@ -6,6 +6,7 @@
 <arg name="mavros_run"          default="true"/>
 <arg name="veh_name" default="VOXL1"/>
 <param name="PID_control" type="int" value="0"/>
+<param name="perception_mode" type="int" value="0"/>
 
 
 	<!-- vim: set ft=xml noet : -->
@@ -43,9 +44,9 @@
         <node if="$(arg launch_servo_control)" pkg="drone_pkg" type="servo_control.py" name="servo_control_node" output="screen">
         </node>
         
-        <!-- Computer Packages -->
+        <!-- Perception Packages -->
         
-        <node pkg="computer_pkg" type="placement.py" name="placement_node" output="screen">
+        <node pkg="perception_pkg" type="placement.py" name="placement_node" output="screen">
         </node>
 
 </launch>
