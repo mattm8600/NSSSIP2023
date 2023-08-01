@@ -1,3 +1,7 @@
 [submodule "src/detection_msgs"]
 	path = src/detection_msgs
 	url = https://github.com/mats-robotics/detection_msgs
+[submodule "yolov5"]
+	path = src/yolov5_ros/src/yolov5
+	url = https://github.com/ultralytics/yolov5
+

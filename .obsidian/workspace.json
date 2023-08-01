@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "37694b4e93c624f5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -146,18 +159,19 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b2df169a885b285a",
+  "active": "37694b4e93c624f5",
   "lastOpenFiles": [
-    "autonomy_ws/src/computer_pkg/srv/PlaceSensor.srv",
-    "autonomy_ws/src/computer_pkg/src/tflite_filter.cpp",
-    "autonomy_ws/src/computer_pkg/src/placement.py",
-    "autonomy_ws/src/computer_pkg/src/go_to_point_node.cpp",
-    "autonomy_ws/src/computer_pkg/src/circular_flight.cpp",
-    "autonomy_ws/src/computer_pkg/src/camera_convert_node.cpp",
-    "autonomy_ws/src/computer_pkg/msg/AiDetection.msg",
-    "autonomy_ws/src/computer_pkg/scripts/tag_to_topic.py",
-    "autonomy_ws/src/computer_pkg/scripts/sim_launch.sh",
-    "autonomy_ws/src/computer_pkg/scripts/repeater.sh",
-    "autonomy_ws/src/computer_pkg/scripts/go_to_point_gui.py"
+    "src/perception_pkg",
+    "requirements.txt~",
+    "requirements.txt",
+    "src/yolov5_ros/src/detect.py",
+    "src/yolov5_ros/package.xml",
+    "src/yolov5_ros/launch/yolov5_d435.launch",
+    "src/yolov5_ros/launch/yolov5.launch",
+    "src/yolov5_ros/launch",
+    "src/yolov5_ros/README.md",
+    "src/yolov5_ros/LICENSE",
+    "src/yolov5_ros/CMakeLists.txt",
+    "src/computer_pkg/yolo_models/sensor_detect.yaml"
   ]
 }
