@@ -1,0 +1,15 @@
+(cl:defpackage drone_pkg-srv
+  (:use )
+  (:export
+   "DRONEOP"
+   "<DRONEOP-REQUEST>"
+   "DRONEOP-REQUEST"
+   "<DRONEOP-RESPONSE>"
+   "DRONEOP-RESPONSE"
+   "PLACESENSOR"
+   "<PLACESENSOR-REQUEST>"
+   "PLACESENSOR-REQUEST"
+   "<PLACESENSOR-RESPONSE>"
+   "PLACESENSOR-RESPONSE"
+  ))
+

@@ -91,5 +91,9 @@ include_directories(include
 ## Add executables, libraries, and dependencies
 add_executable(drone_offboard src/drone_offboard.cpp)
 add_executable(PID_controller src/PID_controller.cpp)
+
+add_dependencies(drone_offboard computer_pkg_generate_messages_cpp)
+add_dependencies(tflite_filter drone_pkg_generate_messages_cpp)
+
 target_link_libraries(drone_offboard ${catkin_LIBRARIES})
 target_link_libraries(PID_controller ${catkin_LIBRARIES})

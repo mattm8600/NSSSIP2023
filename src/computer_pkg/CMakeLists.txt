@@ -93,6 +93,9 @@ add_executable(camera_convert_node src/camera_convert_node.cpp)
 add_executable(circular_flight src/circular_flight.cpp)
 add_executable(tflite_filter src/tflite_filter.cpp)
 
+add_dependencies(camera_convert_node computer_pkg_generate_messages_cpp)
+add_dependencies(tflite_filter computer_pkg_generate_messages_cpp)
+
 target_link_libraries(go_to_point_node
    ${catkin_LIBRARIES}
 )
