@@ -3,8 +3,12 @@
 <arg name="savedata" default="false"/>
 <arg name="launch_placement" default="true"/>
 <arg name="launch_camera" default="true"/>
+<arg name="launch_perception" default="true"/>
 <arg name="bag_prefix" default="20211012_noflying_orientation_test"/>
 <arg name="veh_name" default="VOXL1"/>
+<arg name="perception_mode" default="0"/>
+<param name="perception_on" type="int" value="perception_mode" />
+
 
  	!-- Save Data -->
         <group if="$(arg savedata)">
@@ -42,5 +46,9 @@
         
         <node if="$(arg launch_camera)" pkg="computer_pkg" type="camera_convert_node" name="camera_convert_node" output="screen">
     	</node>
+	
+	<node if="$(arg launch_perception)" pkg="perception_pkg" type="main.py" name="main_node" output="screen">
+    	</node>
+    	
 
 </launch>
