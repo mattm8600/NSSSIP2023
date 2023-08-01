@@ -267,8 +267,8 @@ def find_sensor_placement(target_lat, target_lon):
 
             # Final output
             #print("Flattext pixel:", flattest_pixel)
-            
-            target_latlon = {target_lat,target_lon}
+                        
+            target_latlon = convert_coordinates(flattest_pixel[0], flattest_pixel[1], src.crs, 4326)
             return target_latlon
 
 
