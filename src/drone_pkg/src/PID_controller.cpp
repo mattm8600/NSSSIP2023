@@ -196,13 +196,13 @@ void precisionLand(){
     pose_vel.velocity.y = calc_vel_y;
     pose_vel.velocity.z = calc_vel_z;
 
-    ROS_INFO("ERR_X is %f", err_x);
-    ROS_INFO("ERR_Y is %f", err_y);
-    ROS_INFO("ERR_Z is %f", err_z);
-    ROS_INFO("CALC_VEL_X is %f", calc_vel_x);
-    ROS_INFO("CALC_VEL_Y is %f", calc_vel_y);
-    ROS_INFO("CALC_VEL_Z is %f", calc_vel_z);
-    ROS_INFO("LANDING COUNTER is %d", landing_counter);
+    //ROS_INFO("ERR_X is %f", err_x);
+    //ROS_INFO("ERR_Y is %f", err_y);
+    //ROS_INFO("ERR_Z is %f", err_z);
+    //ROS_INFO("CALC_VEL_X is %f", calc_vel_x);
+    //ROS_INFO("CALC_VEL_Y is %f", calc_vel_y);
+    //ROS_INFO("CALC_VEL_Z is %f", calc_vel_z);
+    //ROS_INFO("LANDING COUNTER is %d", landing_counter);
 }
 
 int main(int argc, char **argv)

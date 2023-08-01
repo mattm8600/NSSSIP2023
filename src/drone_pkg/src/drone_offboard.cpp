@@ -24,11 +24,14 @@ array<double,2> target_xy;
 double lat;
 double lon;
 double alt;
+double home_lat;
+double home_lon;
 array<double,2> target_latlon;
 
 float bat;
 
 int control_mode;
+bool start = true;
 bool waiting_for_op = true;
 bool placing_sensor = false;
 bool retrieving_sensor = false;
@@ -69,6 +72,11 @@ void global_pos_cb(sensor_msgs::NavSatFix global_pos){
     lat = global_pos.latitude;
     lon = global_pos.longitude;
     alt = global_pos.altitude;
+    if(start){
+        home_lat = lat;
+        home_lon = lon;
+        start = false;
+    }
 }
 
 void bat_cb(sensor_msgs::BatteryState battery){
@@ -220,6 +228,13 @@ void fly_to_target(double target_lat, double target_lon, ros::Rate loop_rate){
 
 }
 
+void fly_home(ros::Rate loop_rate){
+    if( set_mode_client.call(return_set_mode) &&
+            return_set_mode.response.mode_sent){
+            cout << "returning to home position" << endl;
+        }
+}
+
 void wait_for_detection(ros::Rate loop_rate){
     ros::spinOnce();
     while(detected_flag != 1 && ros::ok()){
@@ -239,13 +254,6 @@ void start_PID_control(){
         //wait for PID_controller to relinquish control (control mode = 0)
         ros::param::get("/PID_control",control_mode);
     }
-}
-
-void checkForSensorBox(){
-    //close sensor and spin for callback
-    servo_state.data = 1;
-    servo_pub.publish(servo_state);
-    ros::spinOnce();
 }
 
 void place_sensor(ros::Rate loop_rate){
@@ -290,11 +298,9 @@ void place_sensor(ros::Rate loop_rate){
         //print sensor positions
         print_sensor_pos();
 
-        //return to home
-        if( set_mode_client.call(return_set_mode) &&
-            return_set_mode.response.mode_sent){
-            cout << "returing to home position" << endl;
-        }
+
+        //return to home and land
+        fly_home(loop_rate);
 
         //reset
         placing_sensor = false;
@@ -338,22 +344,24 @@ void retrieve_sensor(ros::Rate loop_rate){
         servo_state.data = 1;
         servo_pub.publish(servo_state);
 
+        //re-arms drone
+        if(arming_client.call(arm_cmd) && arm_cmd.response.success){
+            ROS_INFO("Vehicle armed");
+        }
+
         //raise height
         target_pose.position.z = 3.0;
         for(int i = 60; ros::ok() && i > 0; --i){
             local_pos_pub_mavros.publish(target_pose);
             loop_rate.sleep();
         }
-
-        //check if sensor is still in gripper
-        checkForSensorBox();
+        
+        //updates callbacks (to see if hasSensorBox)
+        ros::spinOnce();
     }
 
-    //return home
-    if( set_mode_client.call(return_set_mode) &&
-        return_set_mode.response.mode_sent){
-        cout << "returing to home position" << endl;
-    }
+    //return home and land
+    fly_home(loop_rate);
 
     //release sensor
     servo_state.data = 0;
