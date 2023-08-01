@@ -1,0 +1,29 @@
+import json
+
+number = 447
+
+file_path = "CUSTOM_PATH"
+
+with open(file_path, 'r') as file:
+    json_data = json.load(file)
+
+captures = json_data.get("captures", [])
+
+for capture in captures:
+    annotations = capture.get("annotations", [])
+    for annotation in annotations:
+        values = annotation.get("values", [])
+        for value in values:
+            if value.get("label_name") == "sensor":
+                x = value.get("x")
+                y = value.get("y")
+                width = value.get("width")
+                height = value.get("height")
+
+                file_name = f"rgb_{number}.txt"
+                number = number + 1
+
+                with open(file_name, 'w') as file:
+                    file.write(f"0 {x} {y} {width} {height}")
+
+                    print(f"Sensor values have been written to {file_name}.")
