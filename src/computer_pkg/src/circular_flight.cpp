@@ -21,11 +21,11 @@ Parameters:
 
 geometry_msgs::PoseStamped new_pose;
 geometry_msgs::PoseStamped current_pose;
-float vec[3] = { 0.0, 0.0, 0.0 };
-float num_steps = 32.0;
-float step_number = 0;
-float radius = 30;
-float height = 4;
+double vec[3] = { 0.0, 0.0, 0.0 };
+double num_steps = 32.0;
+double step_number = 0;
+double radius = 30;
+double height = 4;
 int run = 0;
 int done_flag = 0;
 
@@ -92,8 +92,8 @@ int main(int argc, char **argv)
         // If not finished...
         if(!done_flag) {
             // Calculate the next XYZ point to fly to
-            float next_pos[3] = { radius * cos((2 * (float)M_PI * step_number) / num_steps), radius * sin((2 * M_PI * step_number) / num_steps), height };
-            float curr_pos[3] = {current_pose.pose.position.x, current_pose.pose.position.y, current_pose.pose.position.z};
+            double next_pos[3] = { radius * cos((2 * M_PI * step_number) / num_steps), radius * sin((2 * M_PI * step_number) / num_steps), height };
+            double curr_pos[3] = {current_pose.pose.position.x, current_pose.pose.position.y, current_pose.pose.position.z};
             
             // Compare next position vector to current position
             if((abs(next_pos[0]-curr_pos[0])<.3) && (abs(next_pos[1]-curr_pos[1])<.3) && (abs(next_pos[2]-curr_pos[2])<.3)) {
