@@ -1,0 +1,12 @@
+<launch>
+		<node pkg="perception_pkg" type="main.py" name="perception_images" output="screen">
+			<param name="aerial_file" value="$(find perception_pkg)/images/aerial.tif" /
+			<param name="dem_file" value="$(find perception_pkg)/images/dem.tif" />
+			<param name="lat" value="0.0" />
+			<param name="lon" value="0.0" />
+		</node>
+		<node pkg="computer_pkg" type="lat_long_gui.py" name="lat_long_gui" output="screen"/>
+		
+</launch>
+<!-- This is the FCU port number for real drone: 14551 -->
+<!-- This is the ROS Master URI Port Number: 11311 -->
