@@ -62,7 +62,7 @@ void tflite_callback(const computer_pkg::AiDetection::ConstPtr& msg) {
 }
 
 int main(int argc, char **argv) {
-
+ROS_INFO("WE HAVE LAUNCHOFF");
 /* Input the camera intrinsics matrix here
 
 | kuf | 0   | u_0 | 0 |
@@ -97,14 +97,14 @@ while (ros::ok())
 
     // Wait for the first pose to be published
     if(getting_pose == 0) {
-         ROS_INFO("Waiting for pose\n");
+        //  ROS_INFO("Waiting for pose\n");
          ros::spinOnce();
          loop_rate.sleep();
      }
 
     // Wait for the classifier to start sending bounding boxes
     else if(getting_tflite == 0) {
-        ROS_INFO("Waiting for tflite");
+        // ROS_INFO("Waiting for tflite");
         ros::spinOnce();
         loop_rate.sleep();
     }
@@ -130,7 +130,7 @@ while (ros::ok())
         bb_vector.pose.position.x = body_coords(0);
         bb_vector.pose.position.y = body_coords(1);
         bb_vector.pose.position.z = body_coords(2);
-        ROS_INFO("Xc: %f, Yc: %f, Zc: %f\n", body_coords(0), body_coords(1), body_coords(2));
+        // ROS_INFO("Xc: %f, Yc: %f, Zc: %f\n", body_coords(0), body_coords(1), body_coords(2));
 
         bb_vector.header.stamp = ros::Time::now();
         bb_vector.header.frame_id = "Hires Camera Frame";
@@ -142,7 +142,7 @@ while (ros::ok())
     } 
     // If the sensor was not detected...
     else {
-        ROS_INFO("Not detected");
+        // ROS_INFO("Not detected");
         // Send a negative z value to indicate that nothing is being detected
         // TODO: Incorporate a ROS param that indicates detection
         bb_vector.pose.position.z = -1*(current_pose.pose.position.z - sensor_height);
