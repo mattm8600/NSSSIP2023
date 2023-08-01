@@ -5,7 +5,7 @@
 
 # NOTE: Pytorch is installed on their website
 matplotlib>=3.2.2
-numpy>=1.18.5
+numpy>=1.24.4
 opencv-python>=4.1.1
 Pillow>=7.1.2
 PyYAML>=5.3.1
@@ -21,7 +21,7 @@ tensorboard>=2.4.1
 
 # Plotting ------------------------------------
 pandas>=1.1.4
-seaborn>=0.11.0
+seaborn>=0.12.2
 
 # Export --------------------------------------
 # coremltools>=5.2  # CoreML export

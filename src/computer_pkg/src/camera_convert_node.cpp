@@ -97,14 +97,12 @@ while (ros::ok())
 
     // Wait for the first pose to be published
     if(getting_pose == 0) {
-        //  ROS_INFO("Waiting for pose\n");
          ros::spinOnce();
          loop_rate.sleep();
      }
 
     // Wait for the classifier to start sending bounding boxes
     else if(getting_tflite == 0) {
-        // ROS_INFO("Waiting for tflite");
         ros::spinOnce();
         loop_rate.sleep();
     }
