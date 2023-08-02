@@ -30,6 +30,7 @@ array<double,2> target_latlon;
 
 float bat;
 
+float search_height = 2.0;
 int control_mode;
 bool start = true;
 bool waiting_for_op = true;
@@ -201,7 +202,7 @@ void set_global2local_target(double lat1, double lon1, double lat2, double lon2)
 
 void fly_to_target(double target_lat, double target_lon, ros::Rate loop_rate){
     //raise to cruising height
-    target_pose.position.z = 3.0;
+    target_pose.position.z = search_height;
     for(int i = 60; ros::ok() && i > 0; --i){
         local_pos_pub_mavros.publish(target_pose);
         loop_rate.sleep();
@@ -350,7 +351,7 @@ void retrieve_sensor(ros::Rate loop_rate){
         }
 
         //raise height
-        target_pose.position.z = 3.0;
+        target_pose.position.z = search_height;
         for(int i = 60; ros::ok() && i > 0; --i){
             cout << "raising height" << endl;
             local_pos_pub_mavros.publish(target_pose);

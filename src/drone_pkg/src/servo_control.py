@@ -63,7 +63,7 @@ if __name__ == '__main__':
     while not rospy.is_shutdown():
         
         response = wait_teensy_response()
-        print(response)
+        #print(response)
 
         rospy.sleep(0.02)
     

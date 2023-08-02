@@ -45,6 +45,7 @@ void camErrCallback(const geometry_msgs::PoseStamped::ConstPtr& msg){
     err_y = msg->pose.position.y;
     err_z = msg->pose.position.z;
 
+    ros::param::get("/PID_control", precision_land_param);
     if(precision_land_param == 1){
         precisionLand();
     }
@@ -162,7 +163,7 @@ void precisionLand(){
         }else if(err_z > 0 && calc_vel_z > 0){
             calc_vel_z *= -1;
         }
-        ROS_INFO("CLIMBING TO SEARCH ALTITUDE");
+        ROS_INFO("roCLIMBING TO SEARCH ALTITUDE");
         if(abs(err_z) > 0.8){
             climb_to_search_alt = 0;
         }
@@ -232,8 +233,10 @@ int main(int argc, char **argv)
     
     while(ros::ok()){
 
-        local_pos_pub_mavros.publish(pose_vel);
-
+        ros::param::get("/PID_control", precision_land_param);
+        if(precision_land_param == 1){
+            local_pos_pub_mavros.publish(pose_vel);
+        }
         
         ros::spinOnce();
         rate.sleep();
