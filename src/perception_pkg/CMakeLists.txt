@@ -4,6 +4,7 @@ project(perception_pkg)
 ## Find catkin and any catkin packages
 find_package(catkin REQUIRED COMPONENTS
     rospy
+    message_generation
 )
 
 ## Generate services in the 'srv' folder
@@ -26,6 +27,7 @@ catkin_install_python(
 catkin_package(
     CATKIN_DEPENDS
     rospy
+    message_runtime
 )
 
 ## Your package locations should be listed before other locations

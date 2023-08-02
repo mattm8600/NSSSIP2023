@@ -19,10 +19,10 @@ def button_callback():
     lon = lon_ent.get()
     if lat is not None:
         print("Setting Latitude to "+ lat)
-        rospy.set_param("/main.py/lat", float(lat))
+        rospy.set_param("/placement_node/lat", float(lat))
     if lon is not None:    
         print("Setting Longitude to " + lon)
-        rospy.set_param("/main.py/lon", float(lon))
+        rospy.set_param("/placement_node/lon", float(lon))
 
 exec_button = Button(text="Go to coordinate", font=("Arial", 12), command=button_callback).grid(column=0,row=4)
 root.mainloop()

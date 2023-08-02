@@ -275,8 +275,8 @@ def find_sensor_placement(target_lat, target_lon):
 
 if __name__ == "__main__":
     if(perception_mode == 2):
-        target_lat = rospy.get_param("/placment/lat")
-        target_lon = rospy.get_param("/placement/lon")
+        target_lat = rospy.get_param("/placement_node/lat")
+        target_lon = rospy.get_param("/placement_node/lon")
         target_latlon = find_sensor_placement(target_lat,target_lon)
         print("Target latitude = " + target_latlon[0] + "\n")
         print("Target longitude = " + target_latlon[1] + "\n")
