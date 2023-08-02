@@ -1,7 +1,7 @@
 #include <ros/ros.h>
 #include <mavros_msgs/PositionTarget.h>
 #include <geometry_msgs/PoseStamped.h>
-#include <computer_pkg/AiDetection.h>
+#include <computer_msgs/AiDetection.h>
 #include <std_msgs/String.h>
 #include <iostream>
 #include <Eigen/Dense>
@@ -29,7 +29,7 @@ Parameters:
 geometry_msgs::PoseStamped bb_vector;
 geometry_msgs::PoseStamped current_pose;
 int getting_pose = 0;
-computer_pkg::AiDetection tflite_data;
+computer_msgs::AiDetection tflite_data;
 int getting_tflite = 0;
 int detected_flag = 0;
 
@@ -47,7 +47,7 @@ void pose_callback(const geometry_msgs::PoseStamped::ConstPtr& msg) {
 }
 
 // Gets the bounding box information from yolo
-void tflite_callback(const computer_pkg::AiDetection::ConstPtr& msg) {
+void tflite_callback(const computer_msgs::AiDetection::ConstPtr& msg) {
     tflite_data = *msg;
     getting_tflite = 1;
 
@@ -86,7 +86,7 @@ ros::NodeHandle nh;
 // Declare publishers/Subscribers
 ros::Publisher vector_pub = nh.advertise<geometry_msgs::PoseStamped>("bb_camera_vector", 100);
 ros::Subscriber pose_sub = nh.subscribe<geometry_msgs::PoseStamped>("mavros/local_position/pose", 100, pose_callback);
-ros::Subscriber tflite_sub = nh.subscribe<computer_pkg::AiDetection>("tflite_data", 100, tflite_callback);
+ros::Subscriber tflite_sub = nh.subscribe<computer_msgs::AiDetection>("tflite_data", 100, tflite_callback);
 ros::Rate loop_rate(10.0);
 
 // Get the detection threshold parameter

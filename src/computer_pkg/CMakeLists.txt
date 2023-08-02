@@ -5,13 +5,14 @@ project(computer_pkg)
 
 ## Find catkin and any catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  mavros_msgs
-  sensor_msgs
   roscpp
   rospy
   std_msgs
   geographic_msgs
   geometry_msgs
+  computer_msgs
+  mavros_msgs
+  sensor_msgs
   message_generation
 )
 
@@ -21,10 +22,9 @@ find_package(
 )
 
 ## Generate messages in the 'msg' folder
-add_message_files(
-  FILES
-  AiDetection.msg
-)
+# add_message_files(
+#   FILES
+# )
 
 ## Generate services in the 'srv' folder
 add_service_files(
@@ -74,11 +74,11 @@ endif ()
 catkin_package(
   CATKIN_DEPENDS
   message_runtime
-  geographic_msgs
   roscpp
   rospy
   sensor_msgs
   std_msgs
+  geographic_msgs
   Eigen
 )
 
@@ -92,6 +92,9 @@ add_executable(go_to_point_node src/go_to_point_node.cpp)
 add_executable(camera_convert_node src/camera_convert_node.cpp)
 add_executable(circular_flight src/circular_flight.cpp)
 add_executable(tflite_filter src/tflite_filter.cpp)
+
+add_dependencies(camera_convert_node computer_msgs_generate_messages_cpp)
+add_dependencies(tflite_filter computer_msgs_generate_messages_cpp)
 
 target_link_libraries(go_to_point_node
    ${catkin_LIBRARIES}

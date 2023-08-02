@@ -1,0 +1,8 @@
+prefix=/home/arl/NSSSIP2023/devel
+
+Name: perception_pkg
+Description: Description of perception_pkg
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: rospy

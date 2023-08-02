@@ -11,7 +11,7 @@ using namespace std;
 #include "mavros_msgs/PositionTarget.h"
 #include "mavros_msgs/CommandBool.h"
 #include "mavros_msgs/SetMode.h"
-#include "computer_pkg/AiDetection.h"
+#include "computer_msgs/AiDetection.h"
 #include "drone_pkg/PlaceSensor.h"
 #include "drone_pkg/DroneOp.h"
 
@@ -44,7 +44,7 @@ std_msgs::Int32 servo_state;
 mavros_msgs::PositionTarget target_pose;
 mavros_msgs::SetMode return_set_mode;
 mavros_msgs::CommandBool arm_cmd;
-computer_pkg::AiDetection tflite_data;
+computer_msgs::AiDetection tflite_data;
 
 //declare publishers and clients
 ros::Publisher servo_pub;
@@ -82,7 +82,7 @@ void bat_cb(sensor_msgs::BatteryState battery){
     bat = battery.percentage;
 }
 
-void tflite_callback(const computer_pkg::AiDetection::ConstPtr& msg) {
+void tflite_callback(const computer_msgs::AiDetection::ConstPtr& msg) {
     tflite_data = *msg;
     getting_tflite = 1;
     if(tflite_data.class_confidence > 0) {
@@ -407,7 +407,7 @@ int main(int argc, char **argv){
     local_pos_sub = n.subscribe("mavros/local_position/pose", 10, local_pos_cb);
     global_pos_sub = n.subscribe("mavros/global_position/global", 10, global_pos_cb);
     bat_sub = n.subscribe("mavros_msgs/battery", 10, bat_cb);
-    tflite_sub = n.subscribe<computer_pkg::AiDetection>("tflite_data", 100, tflite_callback);
+    tflite_sub = n.subscribe<computer_msgs::AiDetection>("tflite_data", 100, tflite_callback);
     servo_response_sub = n.subscribe<std_msgs::Int32>("/servo_response", 10, servo_cb);
     drone_op_server = n.advertiseService("start_drone_op", start_drone_op);
 
