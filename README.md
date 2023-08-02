@@ -7,11 +7,16 @@ The Aerial Autonomy team developed a system to autonomously place, relocate, and
 ## Autonomy Team Abstract:
 The Aerial Autonomy team developed a system to autonomously place, relocate, and retrieve unattended ground sensors. The project was broken into two main subgroups, including a Perception team and a Mechanical/Autonomy team. The principle challenge for the Autonomy team was to autonomously land on the ground sensor, and design a mechanism to pick it up. Initially, we used april tags and a PD controller to detect the sensor and minimize landing error. Although this worked well in simulation, its reliability and accuracy was limited by the size of the april tag, which could not exceed the size of the sensor box. Our next approach integrated the sensor classification from the Perception team to determine the relative position of the sensor using computer vision. From there we could utilize the PD controller we previously developed to center the drone above the sensor. Additionally, to accommodate a variety of lighting conditions, an IR camera was added to the drone to detect an IR beacon on the sensor. If computer vision is unable to detect the sensor, the IR camera provides an alternative landing approach. Both approaches could be used in a GPS-Denied environment, assuming line of sight to the sensor.
 
-## Further Documentation
+## Documentation
+- [Autonomy Quickstart Guide](https://github.com/mattm8600/NSSSIP2023/tree/main/docs/quickstart_guide.md)
 - [Vision System](https://github.com/mattm8600/NSSSIP2023/tree/main/docs/vision_docs.md)
 - [IR Lock](https://github.com/mattm8600/NSSSIP2023/tree/main/docs/irlock_docs.md)
 - [Sensor Pickup/Placement Architecture](https://github.com/mattm8600/NSSSIP2023/tree/main/placement_architecture.md)
 - [Using yolov5](https://github.com/mattm8600/NSSSIP2023/tree/main/docs/yolov5_docs.md)
+- [Launch File Docs]()
+- [Drone Modifications]()
+- [Other Capabilities]()
+
 ## Installation 
 0. Prerequisites
 	- Install NVIDIA Drivers to run pytorch
@@ -37,11 +42,13 @@ sudo ln -sf eigen3/Eigen Eigen
 sudo ln -sf eigen3/unsupported unsupported
 ```
 
+## References
+- [detection_msgs](https://github.com/mats-robotics/detection_msgs/tree/6c251ef4eaf4d712722b72923c96a96f1cbea6e8)
+- [yolov5_ros](https://github.com/mattm8600/NSSSIP2023/tree/main/src/yolov5_ros/src)
 # TO DO
 - Label which code we wrote, which code other people wrote
 - Make the RQT Graph
 - Make a file describing our process in detail
-- ACTUALLY COMMENT OUR CODE
 - Describe each launch file
-- Link docs to each of the packages and the src
-- Add reference
+- Thomas comment your code
+- Update the output_topic arg in the yolov5.launch file
