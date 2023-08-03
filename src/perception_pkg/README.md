@@ -14,7 +14,7 @@ This package (perception_pkg) contains the best-location-for-sensor-placement al
 
 ## Example:
 - In this package, if one wishes to see how the algorithm works without using the drone, you may look at the example provided.
-- This example consists of a region in Cedar Park, which is in the great state of Texas! This city is located just outside of Austin, Texas.
+- This example consists of a region in Cedar Park, Texas. The exact lat, long coords of the exact region are 30.503877, -97.776747. 
 - In order to run this example, it is strongly advised (once again) to run the terminal command **pip install -r requirements.txt**. This ensures that you have all of the required libraries for this algorithm to work properly.
 - In order to run this example, simply clone **perception_pkg**. Ensure all of the images/data/DEM images for this example are in the same repository.
 - In the code, there are few parameters that you can adjust, such as the radius, the latitude/longitude coordinates of interest (which is hardcoded), and more.
