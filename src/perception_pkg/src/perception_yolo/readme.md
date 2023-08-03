@@ -27,7 +27,7 @@ NOTE: The above two folders are currently empty becuase they have been divided i
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Notes 
 
-Yolov5 Download - https://github.com/ultralytics/yolov5.git
+Yolov5 Download - https://github.com/ultralytics/yolov5.git  
 	- pip install -r requirements.txt --Note: you may need to manually install pytorch for cuda  
 	- Ensure you have updated NVIDIA drivers that support pytorch 11.7 or 11.8  
 	- Recommended to install in dedicated conda environment  
