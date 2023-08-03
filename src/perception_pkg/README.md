@@ -5,12 +5,12 @@ This package (perception_pkg) contains the best-location-for-sensor-placement al
 ## Program Overview:
 - This algorithm determines the best location to place a sensor based on a few parameters. For this internship, the perception team decided our algorithm should focus flatness of the terrain. As such, our algorithm will output a single (lat,long) coordinate.
 - Some of the parameters this algorithm uses to decide the best location for sensor-placement involves a radius of interest and the starting coordinates, which serves as the center of the circle that is internally used.
+- Regardless of how many bands the Digital Elevation Model (DEM) has, only the minimum band is used.
 
 ## Program Requirements:
 - This program requires a variety of libraries, which are located in the requirements.txt file. You can install all of the libraries at by running the terminal-command **pip install -r requirements.txt**. 
 - In order for the algorithm to analyze a region of interest, it requires the aerial imagery (that has been run through a semantic segmented algorithm) and the corresponding LiDAR data. It is advised to also have the Digital Elevation Model (DEM) image. All images must be in a .tif format.
 - For this internship, we only focused on finding the flattest region to place a sensor.
-- Regardless of how many bands or what bands your DEM image has, this 
 
 ## Example:
 - In this package, if one wishes to see how the algorithm works without using the drone, you may look at the example provided.
@@ -25,5 +25,5 @@ This package (perception_pkg) contains the best-location-for-sensor-placement al
 *This step assumes you are running the algorithm without using the drone.*
 1) In order to utilize this algorithm, it requires two important files: aerial imagery of a region that has been through a semantic segmentation algorithm and the corresponding LiDAR data for that region. The LiDAR data must be converted to a Digital Elevation Mode (DEM) image -- this can be done by using the GDAL library. The semantic segmentated aerial imagery and the DEM image must use the .tif extension.
 2) Put all of images in the same directory as the source code for the algorithm.
-3) Throughout the source code, you must add the names of your images in the respective locations. There are comments in the source code that tell where each image needs to go
+3) Throughout the source code, you must add the names of your images in the respective locations. There are comments in the source code that tell where each image needs to go.
 4) 
