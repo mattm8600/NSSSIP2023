@@ -62,6 +62,7 @@ export ROS_MASTER_URI=http://droneIP:11311
 (example: export ROS_IP=192.168.1.171
 	  export ROS_MASTER_URI=http://192.168.1.153:11311)
 *If you will be doing this repeatedly you can set the export ROS_IP and ROS_MASTER_URI commands in scripts/router_start.sh. Then source it with "source scripts/router_start.sh"
+```
 2. Run the computer.launch file
 ```
 cd NSSSIP2023
