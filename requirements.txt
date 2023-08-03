@@ -44,7 +44,6 @@ thop>=0.1.1  # FLOPs computation
 
 # Perception ----------------------------------
 rasterio>=1.3.7
-osgeo>=3.7.0
 pyproj>=2.5.0
 shapely>=2.0.1
 
