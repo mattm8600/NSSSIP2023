@@ -32,6 +32,7 @@ int getting_pose = 0;
 computer_msgs::AiDetection tflite_data;
 int getting_tflite = 0;
 int detected_flag = 0;
+int first_detection_flag = 0;
 
 float threshold = 0;
 
@@ -55,6 +56,7 @@ void tflite_callback(const computer_msgs::AiDetection::ConstPtr& msg) {
     // nothing is detected. Here we filter out these messages
     if(tflite_data.class_confidence > 0) {
         detected_flag = 1;
+        first_detection_flag = 1;
     }
     else {
         detected_flag = 0;
@@ -138,6 +140,16 @@ while (ros::ok())
         ros::spinOnce();
         loop_rate.sleep();
     } 
+
+    else if(!first_detection_flag){
+        bb_vector.pose.position.x = 0.6;
+        bb_vector.pose.position.y = 0.6;
+        bb_vector.pose.position.z = -1*(current_pose.pose.position.z);
+        vector_pub.publish(bb_vector);
+        ros::spinOnce();
+        loop_rate.sleep();
+    }
+
     // If the sensor was not detected...
     else {
         // ROS_INFO("Not detected");
