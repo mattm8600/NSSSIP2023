@@ -17,7 +17,7 @@ This package (perception_pkg) contains the best-location-for-sensor-placement al
 - This example consists of a region in Cedar Park, Texas. The exact lat, long coords of the region are 30.503877, -97.776747. 
 - In order to run this example, it is strongly advised (once again) to run the terminal command **pip install -r requirements.txt**. This ensures that you have all of the required libraries for this algorithm to work properly.
 - In order to run this example, simply clone **perception_pkg**. Ensure all of the images/data/DEM images for this example are in the same repository.
-- In the code, there are few parameters that you can adjust, such as the radius, the latitude/longitude coordinates of interest (which is hardcoded), and more.
+- In the source code, there are few parameters that you can adjust, such as the radius, the latitude/longitude coordinates of interest (which is hardcoded), and more.
 - You can then simply execute the program. This program, when not being used with the drone, will output a pair of (longitude, latitude) coordinates that the algorithm decided is the best area.
 - This example will simply find the flattest point to place the sensor. 
 
