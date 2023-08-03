@@ -28,9 +28,6 @@ cd drone_ws
 catkin_make
 ```
 
-Drone Launch
-Computer Launch
-Voxl_Mpa_To_Ros
 ## Launch Drone Package
 1. In a new terminal SSH into the drone
 ```
