@@ -28,8 +28,6 @@ cd drone_ws
 catkin_make
 ```
 
-*if you do not have a docker image you can create one using 
-
 Drone Launch
 Computer Launch
 Voxl_Mpa_To_Ros
