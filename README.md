@@ -18,10 +18,9 @@ The Aerial Autonomy team developed a system to autonomously place, relocate, and
 - [Vision System](https://github.com/mattm8600/NSSSIP2023/tree/main/docs/vision_docs.md)
 - [IR Lock](https://github.com/mattm8600/NSSSIP2023/tree/main/docs/irlock_docs.md)
 - [Sensor Pickup/Placement Architecture](https://github.com/mattm8600/NSSSIP2023/tree/main/placement_architecture.md)
-- [Using yolov5](https://github.com/mattm8600/NSSSIP2023/tree/main/docs/yolov5_docs.md)
-- [Launch File Docs]()
+- [Using yolov5](https://github.com/mattm8600/NSSSIP2023/tree/main/src/perception_pkg/src/perception_yolo/readme.md)
+- [Launch File Docs](https://github.com/mattm8600/NSSSIP2023/tree/main/launch/launch_docs.md)
 - [Drone Modifications]()
-- [Other Capabilities]()
 
 ## Installation 
 

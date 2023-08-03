@@ -15,13 +15,8 @@ Drone Modifications
 - Briefly talk about each component, the bear claw trap
 ## Matt K
 - Put the flowchart you made on the github
-- Fgure out how to format all the yolov5 stuff
 ## Matt M
-- Start on Vision System docs
-- Combine the installation in Autonomy Quickstart to the actual Installation
 - Help Thomas with the Drone Modifications stuff
-- Do the other capabilities docs
-- Do the Launch File Docs
 ## Arturo
 - Add all your code into the github
 - Make sure its all commented and readable and stuff
