@@ -1,3 +1,4 @@
+# Quick Start Guide
 This guide will show you how to get the drone placement and replacement up and running. See [placement architecture] and [computer vision] guides for more detailed looks at the individual systems (and how to run them individually)
 
 ## Physical Setup
@@ -7,26 +8,6 @@ This guide will show you how to get the drone placement and replacement up and r
 2. Place the sensor directly under the drone
 	- The drone grabs the sensor initially on its own
 1. Plug in the drone
-
-## Drone Setup
-1. Push the nsssip docker container to the drone
-
-
-2. Create a new catkin workspace and copy the drone_pkg into its src directory (or add package to existing workspace)
-```
-mkdir -p ~/drone_ws/src
-cp -r NSSSIP2023/src/drone_pkg drone_ws/src
-```
-3. Connect to the drone via Micro USB and ADB push it to the drone
-```
-adb push drone_ws/ /data
-```
-3. Go into your docker container and catkin_make
-```
-voxl-docker -i ubuntu18:nsssip
-cd drone_ws
-catkin_make
-```
 
 ## Launch Drone Package
 1. In a new terminal SSH into the drone

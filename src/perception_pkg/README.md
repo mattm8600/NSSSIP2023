@@ -26,4 +26,6 @@ This package (perception_pkg) contains the best-location-for-sensor-placement al
 1) In order to utilize this algorithm, it requires two important files: aerial imagery of a region that has been through a semantic segmentation algorithm and the corresponding LiDAR data for that region. The LiDAR data must be converted to a Digital Elevation Mode (DEM) image -- this can be done by using the GDAL library. The semantic segmentated aerial imagery and the DEM image must use the .tif extension.
 2) Put all of images in the same directory as the source code for the algorithm.
 3) Throughout the source code, you must add the names of your images in the respective locations. There are comments in the source code that tell where each image needs to go.
-4) 
+4) Adjust the parameters, such as the radius and the starting coordinates, to the appropriate area in your region of interest.
+5) Run the program. As the program executes, the program generates a bunch of plots that show the pixel/pixels of interest. These plots are not necessary for the algorithm.
+6) The final output will be a pair of latitude and longitude coordinates that represent the flattest region. This will be printed to the console.
