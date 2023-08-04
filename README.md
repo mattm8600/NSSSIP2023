@@ -15,6 +15,7 @@ The Aerial Autonomy team developed a system to autonomously place, relocate, and
 
 ## Documentation
 - [Autonomy Quickstart Guide](https://github.com/mattm8600/NSSSIP2023/tree/main/docs/quickstart_guide.md)
+- [Perception Team Readme](https://github.com/mattm8600/NSSSIP2023/tree/main/src/perception_pkg)
 - [Vision System](https://github.com/mattm8600/NSSSIP2023/tree/main/docs/vision_docs.md)
 - [IR Lock](https://github.com/mattm8600/NSSSIP2023/tree/main/docs/irlock_docs.md)
 - [Sensor Pickup/Placement Architecture](https://github.com/mattm8600/NSSSIP2023/tree/main/placement_architecture.md)
@@ -75,8 +76,11 @@ catkin_make
 
 **Note:** The only thing required on the drone is [drone_pkg](https://github.com/mattm8600/NSSSIP2023/tree/main/src/drone_pkg), feel free to use whatever catkin workspace or ROS melodic/Noetic docker container you wish
 
-## RQT Graph
+## Autonomy RQT Graph
 ![RQT Graph](https://github.com/mattm8600/NSSSIP2023/blob/main/docs/pics/rqt_graph.png)
+
+## Perception Algorithm Flow Chart
+![Perception Algorithm](https://github.com/mattm8600/NSSSIP2023/blob/main/docs/pics/perception_flowchart.png)
 ## References
 - [detection_msgs](https://github.com/mats-robotics/detection_msgs/tree/6c251ef4eaf4d712722b72923c96a96f1cbea6e8)
 - [yolov5_ros](https://github.com/mattm8600/NSSSIP2023/tree/main/src/yolov5_ros/src)
