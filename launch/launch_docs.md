@@ -95,4 +95,4 @@ Launches MAVROS and an offboard node that will fly in circles of different heigh
 - **TODO:** Add launch arguments for `circle.launch`
 
 ## sim_test.launch
-Launches everything in `drone.launch` and `perception.launch` except it has the sim port number and sets the perception mode to 0 by default
+Launches everything in `drone.launch` and `perception.launch` except it uses the simulation port number and sets the perception mode to 0 by default
