@@ -57,7 +57,6 @@ sudo apt install gdal-bin libgdal-dev
 ```
 
 ### Drone Setup
-0. **TODO:** Add how to setup a docker container (melodic or noetic ROS 1)
 1. Create a new catkin workspace and copy the drone_pkg into its src directory (or add package to existing workspace)
 ```
 mkdir -p ~/drone_ws/src
