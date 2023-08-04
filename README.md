@@ -21,6 +21,7 @@ The Aerial Autonomy team developed a system to autonomously place, relocate, and
 - [Using yolov5](https://github.com/mattm8600/NSSSIP2023/tree/main/src/perception_pkg/src/perception_yolo/readme.md)
 - [Launch File Docs](https://github.com/mattm8600/NSSSIP2023/tree/main/launch/launch_docs.md)
 - [Drone Modifications]()
+- [Teensy System](https://github.com/mattm8600/NSSSIP2023/tree/main/teensy_servo_control/README.md)
 
 ## Installation 
 
