@@ -10,7 +10,7 @@ Launches yolov5, the placement node, and the camera conversion node on the groun
 - Has options for rosbags
 *Example:* `roslaunch launch/Computer.launch`
 
-*Arguments*:
+*Arguments:*
 `launch_placement` - Option to run perception team's placement node
 - Default - True
 `launch_camera` - Option to launch the camera
@@ -32,7 +32,7 @@ Launches MAVROS, the drone control, the servo control, and the PID controller no
 - Has options for rosbags, MAVROS
 *Example:* `roslaunch src/drone_pkg/launch/drone.launch`
 
-*Arguments*:
+*Arguments:*
 `fcu_url` - The flight controller URL
 - Should be set to the IP of the drone
 - Use port 14551 for QGroundControl and port 14540 for JMavSim
