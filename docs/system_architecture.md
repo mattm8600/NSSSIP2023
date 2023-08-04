@@ -1,3 +1,6 @@
+The system diagram flowchart shows the connections between the various nodes with solid lines represting topics and dotted lines representing services. The white nodes are run on the drone and the grey nodes are run on the computer. The light grey nodes are part of the computer package and the dark grey node is in the perception package
+
+
 ### Placement
 1. In a new terminal source devel/setup.bash and scripts/router_start.sh or export ROS_ID and ROS_IP
 ```
