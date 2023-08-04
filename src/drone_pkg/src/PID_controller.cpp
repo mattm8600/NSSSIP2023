@@ -91,6 +91,17 @@ void precisionLand(){
         calc_vel_z *= -1;
     }
 
+    //holding altitude at 1.0 meter until x and y are centered within 0.35 meters
+    if( ((abs(err_x) > 0.35) || (abs(err_y) > 0.35)) && (abs(err_z) > 1.2) ){
+        err_z = err_z - 1.0;
+        calc_vel_z = (err_z * g1_alt);
+        if(err_z < 0 && calc_vel_z < 0){
+            calc_vel_z *= -1;
+        }else if(err_z > 0 && calc_vel_z > 0){
+            calc_vel_z *= -1;
+        }
+    }
+
     //holding altitude at 0.75 meters until x and y are centered within 0.20 meters
     if( ((abs(err_x) > 0.20) || (abs(err_y) > 0.20)) && (abs(err_z) > 0.85) && (abs(err_z) < 1.2)){
         err_z = err_z - 0.75;
@@ -113,7 +124,7 @@ void precisionLand(){
         }
     }
 
-    //if drone is above 0.5 meters and loses sight of sensor then hold position
+    //if drone loses sight of sensor then hold position
     if(err_z < 0){
         calc_vel_x = 0;
         calc_vel_y = 0;
@@ -146,7 +157,7 @@ void precisionLand(){
         }else if(err_z > 0 && calc_vel_z > 0){
             calc_vel_z *= -1;
         }
-        ROS_INFO("roCLIMBING TO SEARCH ALTITUDE");
+        ROS_INFO("CLIMBING TO SEARCH ALTITUDE");
         if(abs(err_z) > 0.8){
             climb_to_search_alt = 0;
         }
@@ -224,6 +235,7 @@ int main(int argc, char **argv)
         if(precision_land_param == 1){
             local_pos_pub_mavros.publish(pose_vel);
         }
+
 
         ros::spinOnce();
         rate.sleep();
