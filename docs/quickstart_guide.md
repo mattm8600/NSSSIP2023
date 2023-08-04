@@ -58,6 +58,7 @@ export ROS_IP=computerIP
 export ROS_MASTER_URI=http://droneIP:11311
 (example: export ROS_IP=192.168.1.171
 	  export ROS_MASTER_URI=http://192.168.1.153:11311)
+```
 2. roslaunch voxl_mpa_to_ros voxl_mpa_to_ros
 
 - If you are successful, you should see a window pop up with the downward pointing camera
