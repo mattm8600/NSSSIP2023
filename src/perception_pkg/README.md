@@ -22,7 +22,7 @@ This package (perception_pkg) contains the best-location-for-sensor-placement al
 - This example will simply find the flattest point to place the sensor. 
 
 ## Using the Algorithm:
-*This step assumes you are running the algorithm without using the drone.*
+*This step assumes you are running the algorithm without using the drone and not using the perception.launch file -- this step just assumes you use the script alone.* 
 1) In order to utilize this algorithm, it requires two important files: aerial imagery of a region that has been through a semantic segmentation algorithm and the corresponding LiDAR data for that region. The LiDAR data must be converted to a Digital Elevation Mode (DEM) image -- this can be done by using the GDAL library. The semantic segmentated aerial imagery and the DEM image must use the .tif extension.
 2) Put all of images in the same directory as the source code for the algorithm.
 3) Throughout the source code, you must add the names of your images in the respective locations. There are comments in the source code that tell where each image needs to go.
