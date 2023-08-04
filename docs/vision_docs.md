@@ -38,4 +38,4 @@ The PD controller takes the relative position of the sensor and outputs the corr
 After landing, our bear trap system closes with the servo. If the sensor is there, we picked it up. Yay! Otherwise, the trap closes fully and an electric circuit is completed. When there is current across those two pins of the teensy, we know we missed the sensor and restart the PD controller sequence.
 - Can hold a payload of approximately 1kg
 - Provides constant clamping force on the sensor while flying
-- Servo can be manually controlled with the **INSERT SERVO TOPIC NAME HERE**
+- Servo can be manually controlled with the /servo_command topic with a 0 to open the sensor and a 1 to close the sensor
