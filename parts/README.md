@@ -21,6 +21,8 @@
 - m5 by 12mm flat socket head screw (x4)
 - m5 star nut (x4)
 - Lightwear LW20/c (x1)
+- m2.5 by 25mm socket head screw (x2)
+- m2.5 nut (x2)
 - m1.6 by 20mm socket head screw (x1)
 - m1.6 nut (x1)
 
@@ -30,9 +32,16 @@
   - bear trap arm 2 (x1)
   - bearing block (x2)
   - bearing block mount (x2)
+  - servo mount (x1)
 - m2.5 by 20mm socket head screw (x4)
+- m2.5 by 15mm socket head screw (x3)
+- m2.5 lock nut (x2)
+- m2.5 nut (x1)
+- m3 by 20mm socket head screw (x4)
+- m3 nut (x4)
 - 5v servo with plastic arm (x1)
 - teensy 3.2 (x1)
 - male to male micro usb cable (x1)
-- micro usb to 4pin JST cable (x10
+- micro usb to 4pin JST cable (x10)
+- copper tape
 - wires & solder
