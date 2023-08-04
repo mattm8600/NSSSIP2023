@@ -1,8 +1,8 @@
 The system diagram shows the connections between the various nodes and packages with solid lines represting topics and dotted lines representing services. The white nodes are run on the drone and the grey nodes are run on the computer. The light grey nodes are part of the computer package and the dark grey node is in the perception package
 ![system_diagram](https://github.com/mattm8600/NSSSIP2023/blob/main/docs/pics/system_diagram.png)
 
-### How it works
-## Placement
+## How it works
+### Placement
 1. Ground Station
 From here you can use the /start_drone_op service with a value of 0 to start a placement operation
 2. Drone Offboard Node
@@ -12,7 +12,7 @@ Once the placement node recieves a call on the find_spot service it will either 
 4. Drone Offboard Node
 When the offboard node recieves the response from the find_spot service it will arm the drone, takeoff to its cruising height, and then fly to the target location. Once it gets within 0.5 meters of the target destination it will hover briefly, lower to 0.3 meters, release the sensor, mark its location in an array, and then return home.
 
-## Retrieval
+### Retrieval
 1. Ground Station
 From the ground station you can call for a sensor retrieval on the /start_drone_op server with a value of 1
 2. Drone Offboard Node
