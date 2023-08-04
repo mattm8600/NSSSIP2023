@@ -6,10 +6,11 @@
 # The plots are not needed, and you may remove it.
 
 # Required python libraries
+# Test edit
 import cv2
 import rospy
 import numpy as np
-from computer_pkg.srv import PlaceSensor, PlaceSensorResponse
+from perception_pkg.srv import PlaceSensor, PlaceSensorResponse
 import matplotlib.pyplot as plt
 import rasterio
 from rasterio.warp import transform_geom
@@ -275,8 +276,8 @@ def find_sensor_placement(target_lat, target_lon):
 
 if __name__ == "__main__":
     if(perception_mode == 2):
-        target_lat = rospy.get_param("/placment/lat")
-        target_lon = rospy.get_param("/placement/lon")
+        target_lat = rospy.get_param("/placement_node/lat")
+        target_lon = rospy.get_param("/placement_node/lon")
         target_latlon = find_sensor_placement(target_lat,target_lon)
         print("Target latitude = " + target_latlon[0] + "\n")
         print("Target longitude = " + target_latlon[1] + "\n")

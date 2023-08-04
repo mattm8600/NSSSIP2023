@@ -12,7 +12,6 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   geographic_msgs
   geometry_msgs
-  computer_msgs
   message_generation
 )
 
@@ -91,7 +90,7 @@ include_directories(include
 add_executable(drone_offboard src/drone_offboard.cpp)
 add_executable(PID_controller src/PID_controller.cpp)
 
-add_dependencies(drone_offboard computer_msgs_generate_messages_cpp)
+add_dependencies(drone_offboard drone_pkg_generate_messages_cpp)
 
 target_link_libraries(drone_offboard ${catkin_LIBRARIES})
 target_link_libraries(PID_controller ${catkin_LIBRARIES})

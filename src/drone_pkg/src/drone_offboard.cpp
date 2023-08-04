@@ -30,13 +30,13 @@ array<double,2> target_latlon;
 
 float bat;
 
+float search_height = 2.0;
 int control_mode;
 bool start = true;
 bool waiting_for_op = true;
 bool placing_sensor = false;
 bool retrieving_sensor = false;
-int getting_tflite = 0;
-int detected_flag = 0;
+int detected_flag;
 bool hasSensorBox = false;
 
 vector<double> sensor_pos[2];
@@ -44,7 +44,6 @@ std_msgs::Int32 servo_state;
 mavros_msgs::PositionTarget target_pose;
 mavros_msgs::SetMode return_set_mode;
 mavros_msgs::CommandBool arm_cmd;
-computer_msgs::AiDetection tflite_data;
 
 //declare publishers and clients
 ros::Publisher servo_pub;
@@ -57,7 +56,7 @@ ros::ServiceClient arming_client;
 ros::Subscriber local_pos_sub;
 ros::Subscriber global_pos_sub;
 ros::Subscriber bat_sub;
-ros::Subscriber tflite_sub;
+ros::Subscriber bbv_sub;
 ros::Subscriber servo_response_sub;
 ros::ServiceServer drone_op_server;
 
@@ -82,10 +81,9 @@ void bat_cb(sensor_msgs::BatteryState battery){
     bat = battery.percentage;
 }
 
-void tflite_callback(const computer_msgs::AiDetection::ConstPtr& msg) {
-    tflite_data = *msg;
-    getting_tflite = 1;
-    if(tflite_data.class_confidence > 0) {
+void bbv_cb(const geometry_msgs::PoseStamped bb_vector) {
+    if(bb_vector.pose.position.z >= 0) {
+        cout << "Sensor Detected" << endl;
         detected_flag = 1;
     }
     else {
@@ -201,7 +199,7 @@ void set_global2local_target(double lat1, double lon1, double lat2, double lon2)
 
 void fly_to_target(double target_lat, double target_lon, ros::Rate loop_rate){
     //raise to cruising height
-    target_pose.position.z = 3.0;
+    target_pose.position.z = search_height;
     for(int i = 60; ros::ok() && i > 0; --i){
         local_pos_pub_mavros.publish(target_pose);
         loop_rate.sleep();
@@ -251,10 +249,12 @@ void start_PID_control(){
     //set control mode to 1 for PID controller to publish velocities
     ros::param::set("/PID_control", 1);
     ros::param::get("/PID_control",control_mode);
+    cout << "entering PID control" << endl;
     while(control_mode!=0 && ros::ok()){
         //wait for PID_controller to relinquish control (control mode = 0)
         ros::param::get("/PID_control",control_mode);
     }
+    cout << "leaving PID control" << endl;
 }
 
 void place_sensor(ros::Rate loop_rate){
@@ -350,7 +350,7 @@ void retrieve_sensor(ros::Rate loop_rate){
         }
 
         //raise height
-        target_pose.position.z = 3.0;
+        target_pose.position.z = search_height;
         for(int i = 60; ros::ok() && i > 0; --i){
             cout << "raising height" << endl;
             local_pos_pub_mavros.publish(target_pose);
@@ -407,7 +407,7 @@ int main(int argc, char **argv){
     local_pos_sub = n.subscribe("mavros/local_position/pose", 10, local_pos_cb);
     global_pos_sub = n.subscribe("mavros/global_position/global", 10, global_pos_cb);
     bat_sub = n.subscribe("mavros_msgs/battery", 10, bat_cb);
-    tflite_sub = n.subscribe<computer_msgs::AiDetection>("tflite_data", 100, tflite_callback);
+    bbv_sub = n.subscribe<geometry_msgs::PoseStamped>("/bb_camera_vector", 100, bbv_cb);
     servo_response_sub = n.subscribe<std_msgs::Int32>("/servo_response", 10, servo_cb);
     drone_op_server = n.advertiseService("start_drone_op", start_drone_op);
 
