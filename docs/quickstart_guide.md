@@ -1,5 +1,5 @@
 # Quick Start Guide
-This guide will show you how to get the drone placement and replacement up and running. See [placement architecture] and [computer vision] guides for more detailed looks at the individual systems (and how to run them individually)
+This guide will show you how to get the drone placement and replacement up and running. See [system_architecture](https://github.com/mattm8600/NSSSIP2023/blob/main/docs/system_architecture.md) and [computer vision](https://github.com/mattm8600/NSSSIP2023/blob/main/docs/vision_docs.md) guides for more detailed looks at the individual systems (and how to run them individually)
 
 ## Physical Setup
 1. Setup a 5Ghz router and connect your ground station and the drone to it
@@ -42,7 +42,7 @@ export ROS_IP=computerIP
 export ROS_MASTER_URI=http://droneIP:11311
 (example: export ROS_IP=192.168.1.171
 	  export ROS_MASTER_URI=http://192.168.1.153:11311)
-*If you will be doing this repeatedly you can set the export ROS_IP and ROS_MASTER_URI commands in scripts/router_start.sh. Then source it with "source scripts/router_start.sh"
+**Note** If you will be doing this repeatedly you can set the export ROS_IP and ROS_MASTER_URI commands in scripts/router_start.sh. Then source it with "source scripts/router_start.sh"
 ```
 2. Run the computer.launch file
 ```
@@ -63,7 +63,6 @@ export ROS_MASTER_URI=http://droneIP:11311
 - If you are successful, you should see a window pop up with the downward pointing camera
 **Note**: If the popup window with the camera view freezes it means that yolov5 is not running anymore, relaunch computer.launch and voxl_mpa_to_ros to fix this
 
-### TODO: What to run after everything is set up
 ## Additional Notes:
 - There are launch arguments that allow you to rosbag several parts of the vision system
 - There are other arguments that allow you to isolate certain systems (vision, perception, etc)
