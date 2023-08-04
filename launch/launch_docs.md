@@ -28,7 +28,7 @@ Launches yolov5, the placement node, and the camera conversion node on the groun
 ## Drone.launch
 Launches MAVROS, the drone control, the servo control, and the PID controller nodes on the drone.
 - Has options for rosbags, MAVROS
-*Example:* `roslaunch launch/drone.launch`
+*Example:* `roslaunch src/drone_pkg/launch/drone.launch`
 
 *Arguments:*
 `fcu_url` - The flight controller URL
@@ -36,9 +36,13 @@ Launches MAVROS, the drone control, the servo control, and the PID controller no
 - Use port 14551 for QGroundControl and port 14540 for JMavSim
 `gcs_url` - Ground Station URL
 - We haven't gotten this to work, but you can directly connect to QGroundControl through MAVROS using this arg
-`launch_servo_controller` - Option to launch the servo controller
+`launch_servo` - Option to launch the servo controller
 - Default - True
-`launch_PID_controller` - Option to launch the PID controller
+`launch_PID` - Option to launch the PID controller
+- Default - True
+- `launch_drone` - Option to launch the drone offboard ontroller
+- Default - True
+`mavros_run` - Option to launch mavros
 - Default - True
 
 ## mavros.launch
@@ -53,16 +57,25 @@ Can be used to launch MAVROS individually and rosbag its data
 - We haven't gotten this to work, but you can directly connect to QGroundControl through MAVROS using this arg
 
 ## perception.launch
-Switches from hard coded location values to calculating them with `placement.py` as well as a GUI
+Switches perception mode of `placement.py` to 2 and enables GUI input
 *Example:* `roslaunch launch/perception.launch`
 
 *Arguments:*
-`perception_mode` - Option to hardcode or use perception team's node
-- Mode 2 means use the perception node to calculate the target lat long
+`perception_mode` - Option to use hardcoded values or perception node to generate target location
+- Deafult - 2 
 `aerial_file` - Storage location of the aerial picture
 - Stored in `perception_pkg/images`
 `dem_file` - Storage location of dem file
 - Stored in `perception_pkg/images`
+`lat` - Input Latitude
+- Default - 0.0
+`lon` - Input Longitude
+- Default - 0.0
+
+*Perception Modes*
+0. Launches /find_spot service, returns hardcoded values (input lat lon +- random value from 0 to 5 meters)
+1. Launches /find_spot service, returns generated target location from perception algorithm
+2. Does not launch /find_spot service, finds target using lat and lon from GUI and prints results
 
 ## go_to_point.launch
 This launch files launches a GUI, a node that will go to any input local location, and MAVROS
@@ -80,4 +93,4 @@ Launches MAVROS and an offboard node that will fly in circles of different heigh
 - **TODO:** Add launch arguments for `circle.launch`
 
 ## sim_test.launch
-Launches everything in `drone.launch` except it has the sim port number
+Launches everything in `drone.launch` and `perception.launch` except it has the sim port number and sets the perception mode to 0 by default
