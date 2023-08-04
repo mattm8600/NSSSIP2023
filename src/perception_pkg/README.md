@@ -7,6 +7,7 @@ This package (perception_pkg) contains the best-location-for-sensor-placement al
 - Some of the parameters this algorithm uses to decide the best location for sensor-placement involves a radius of interest and the starting coordinates, which serves as the center of the circle that is internally used.
 - Regardless of how many bands the Digital Elevation Model (DEM) has, only the minimum band is used.
 
+![Logic of Algorithm](https://github.com/mattm8600/NSSSIP2023/blob/main/docs/pics/perception_flowchart.png)
 ## Program Requirements:
 - This program requires a variety of libraries, which are located in the requirements.txt file. You can install all of the libraries at by running the terminal-command **pip install -r requirements.txt**. 
 - In order for the algorithm to analyze a region of interest, it requires the aerial imagery (that has been run through a semantic segmented algorithm) and the corresponding LiDAR data. It is advised to also have the Digital Elevation Model (DEM) image. All images must be in a .tif format.

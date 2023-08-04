@@ -11,7 +11,7 @@ Outline:
 ## Introduction
 The CV Pickup is the solution we designed for precision landing. From our testing, GPS and IR Lock were not precise enough for the 2" tolerance to land on the sensor box. Our solution detected the sensor box using yolov5, calculated the relative position of the sensor to the drone, and then used a PD controller to send the correct velocity to center it. Our system is capable of achieving 3" precision consistently and 1.5" in the best conditions (low crosswinds, low glare on the camera). Lastly, we pick it up with the bear claw system.
 
-**Place flow chart here**
+![Vision Flowchart](https://github.com/mattm8600/NSSSIP2023/blob/main/docs/pics/vision_flowchart.png)
 
 ## Yolov5 detection
 We use yolov5 to detect our sensor box. We collected and labeled approximately 5000 images which we used to retrain the model. We include two different sets of weights `sensor_detectv1` and `sensor_detectv3`
