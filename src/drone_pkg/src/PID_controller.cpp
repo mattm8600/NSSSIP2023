@@ -17,8 +17,6 @@
 #include <sensor_msgs/Joy.h>
 #include <geometry_msgs/PoseStamped.h>
 #include <cstdlib>
-#include <Eigen/Dense>
-
 
 mavros_msgs::PositionTarget pose_vel;
 ros::ServiceClient force_arm_client;
@@ -45,6 +43,7 @@ void camErrCallback(const geometry_msgs::PoseStamped::ConstPtr& msg){
     err_y = msg->pose.position.y;
     err_z = msg->pose.position.z;
 
+    ros::param::get("/PID_control", precision_land_param);
     if(precision_land_param == 1){
         precisionLand();
     }
@@ -59,11 +58,7 @@ void precisionLand(){
     float calc_vel_y;
     float calc_vel_z;
 
-    if(err_z > 0 && err_z < 0.5){
-        g1 = 0.60; //proportional gain value
-    }else{
-        g1 = 0.48;
-    }
+    g1 = 0.48; //proportional gain value
     g2 = 0.10; //derivative gain value
     g1_alt = 0.09; //proportional z gain value
 
@@ -87,24 +82,13 @@ void precisionLand(){
         calc_vel_y *= -1;
     }
 
-    //determines z-velocity to 0.35 meters (typically last height where sensor can be clearly seen)
-    err_z = err_z - 0.35;
+    //determines z-velocity to 0.40 meters (typically last height where sensor can be clearly seen)
+    err_z = err_z - 0.40;
     calc_vel_z = (err_z * g1_alt);
     if(err_z < 0 && calc_vel_z < 0){
         calc_vel_z *= -1;
     }else if(err_z > 0 && calc_vel_z > 0){
         calc_vel_z *= -1;
-    }
-
-    //holding altitude at 1.0 meter until x and y are centered within 0.35 meters
-    if( ((abs(err_x) > 0.35) || (abs(err_y) > 0.35)) && (abs(err_z) > 1.2) ){
-        err_z = err_z - 1.0;
-        calc_vel_z = (err_z * g1_alt);
-        if(err_z < 0 && calc_vel_z < 0){
-            calc_vel_z *= -1;
-        }else if(err_z > 0 && calc_vel_z > 0){
-            calc_vel_z *= -1;
-        }
     }
 
     //holding altitude at 0.75 meters until x and y are centered within 0.20 meters
@@ -130,7 +114,7 @@ void precisionLand(){
     }
 
     //if drone is above 0.5 meters and loses sight of sensor then hold position
-    if(err_z < 0 && abs(err_z) > 0.5){
+    if(err_z < 0){
         calc_vel_x = 0;
         calc_vel_y = 0;
         calc_vel_z = 0;
@@ -169,7 +153,7 @@ void precisionLand(){
     }
 
     //landing condition
-    if(((abs(err_z) < 0.4) && (abs(err_x) < 0.10) && (abs(err_y) < 0.10)) || (land = 1)){ 
+    if(((abs(err_z) < 0.50) && (abs(err_x) < 0.10) && (abs(err_y) < 0.10)) || (land == 1)){
         calc_vel_z = -2.5;
         ROS_INFO("LANDING!!!!");
 
@@ -177,32 +161,37 @@ void precisionLand(){
             land = 1;
         }
 
-        landed_counter++;
+        landed_counter += 1;
 
-        if(landed_counter == 160){
+        if(landed_counter > 80){
             mavros_msgs::CommandLong arm_cmd;
             arm_cmd.request.param1 = 0; //arming param (0 = disarm, 1 = arm)
             arm_cmd.request.param2 = 21196; //force param (21196 = force)
+            landed_counter = 0;
+            precision_land_param = 0;
+            ros::param::set("/PID_control", 0);
+            land = 0;
             if(force_arm_client.call(arm_cmd) && arm_cmd.response.success){
                 ROS_INFO("DISARMING!!!!");
+                landed_counter = 0;
                 land = 0;
                 precision_land_param = 0;
-                ros::param::set("/PID_control", precision_land_param);
+                ros::param::set("/PID_control", 0);
             }
         }
     }
-    
+
     pose_vel.velocity.x = calc_vel_x;
     pose_vel.velocity.y = calc_vel_y;
     pose_vel.velocity.z = calc_vel_z;
 
-    //ROS_INFO("ERR_X is %f", err_x);
-    //ROS_INFO("ERR_Y is %f", err_y);
-    //ROS_INFO("ERR_Z is %f", err_z);
-    //ROS_INFO("CALC_VEL_X is %f", calc_vel_x);
-    //ROS_INFO("CALC_VEL_Y is %f", calc_vel_y);
-    //ROS_INFO("CALC_VEL_Z is %f", calc_vel_z);
-    //ROS_INFO("LANDING COUNTER is %d", landing_counter);
+    ROS_INFO("ERR_X is %f", err_x);
+    ROS_INFO("ERR_Y is %f", err_y);
+    ROS_INFO("ERR_Z is %f", err_z);
+    ROS_INFO("CALC_VEL_X is %f", calc_vel_x);
+    ROS_INFO("CALC_VEL_Y is %f", calc_vel_y);
+    ROS_INFO("CALC_VEL_Z is %f", calc_vel_z);
+    ROS_INFO("LANDING COUNTER is %d", landing_counter);
 }
 
 int main(int argc, char **argv)
@@ -216,8 +205,8 @@ int main(int argc, char **argv)
     ros::Publisher local_pos_pub_mavros = nh.advertise<mavros_msgs::PositionTarget>("mavros/setpoint_raw/local", 5);
     force_arm_client = nh.serviceClient<mavros_msgs::CommandLong>("mavros/cmd/command");
     ros::Subscriber cam_err = nh.subscribe<geometry_msgs::PoseStamped>("/bb_camera_vector", 1000, camErrCallback);
-    
-    
+
+
     //the setpoint publishing rate MUST be faster than 2Hz
     ros::Rate rate(20.0);
 
@@ -229,12 +218,14 @@ int main(int argc, char **argv)
     ros::Time last_request = ros::Time::now();
 
     int count = 0;
-    
+
     while(ros::ok()){
+        ros::param::get("/PID_control", precision_land_param);
+        if(precision_land_param == 1){
+            local_pos_pub_mavros.publish(pose_vel);
+        }
 
-        local_pos_pub_mavros.publish(pose_vel);
 
-        
         ros::spinOnce();
         rate.sleep();
         count++;
@@ -243,3 +234,4 @@ int main(int argc, char **argv)
 
     return 0;
 }
+
