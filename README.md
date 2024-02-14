@@ -1,6 +1,10 @@
 # NSSSIP2023
 This repository contains the Autonomy and Perception Team's work from the National Security Scholars Summer Internship 2023. We designed an autonomous system for autonomous sensor placement and replacement. 
 
+## Autonomous Pickup / Placement Demonstration:
+[![Placement and Pickup Youtube Video](https://img.youtube.com/vi/8VMbdI74gp0/0.jpg)](https://www.youtube.com/watch?v=8VMbdI74gp0)
+
+
 ### Capabilities:
 - Vision Based Precision Landing
 - Custom Trained yolov5 classifier
