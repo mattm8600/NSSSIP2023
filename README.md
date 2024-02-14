@@ -1,15 +1,14 @@
 # NSSSIP2023
 This repository contains the Autonomy and Perception Team's work from the National Security Scholars Summer Internship 2023. We designed an autonomous system for autonomous sensor placement and replacement. 
 
-## Autonomous Pickup / Placement Demonstration:
-[![Placement and Pickup Youtube Video](https://img.youtube.com/vi/8VMbdI74gp0/0.jpg)](https://www.youtube.com/watch?v=8VMbdI74gp0)
-
-
 ### Capabilities:
 - Vision Based Precision Landing
 - Custom Trained yolov5 classifier
 - Flying in circles around a target
 - Fly drone to any point via GUIs
+
+### Autonomous Pickup / Placement Demonstration:
+[![Placement and Pickup Youtube Video](https://img.youtube.com/vi/8VMbdI74gp0/0.jpg)](https://www.youtube.com/watch?v=8VMbdI74gp0)
 
 ## Autonomy Team Abstract:
 The Aerial Autonomy team developed a system to autonomously place, relocate, and retrieve unattended ground sensors. The project was broken into two main subgroups, including a Perception team and a Mechanical/Autonomy team. The principle challenge for the Autonomy team was to autonomously land on the ground sensor, and design a mechanism to pick it up. Initially, we used april tags and a PD controller to detect the sensor and minimize landing error. Although this worked well in simulation, its reliability and accuracy was limited by the size of the april tag, which could not exceed the size of the sensor box. Our next approach integrated the sensor classification from the Perception team to determine the relative position of the sensor using computer vision. From there we could utilize the PD controller we previously developed to center the drone above the sensor. Additionally, to accommodate a variety of lighting conditions, an IR camera was added to the drone to detect an IR beacon on the sensor. If computer vision is unable to detect the sensor, the IR camera provides an alternative landing approach. Both approaches could be used in a GPS-Denied environment, assuming line of sight to the sensor.
